@@ -9,7 +9,7 @@ export default function Schedule() {
               <br />
               4th Nov
             </h1>
-            <a href="https://drive.google.com/file/d/1BCGnZfcA4l9NIhDTcAMqMBt6sOXihth4/view?usp=share_link">
+            <a href="#">
               <div className="btn btn-success w-full">Download PDF</div>
             </a>
             <h1 className="text-center text-gray-200 pb-5 mt-5 text-2xl">
@@ -17,7 +17,7 @@ export default function Schedule() {
               <br />
               5th Nov
             </h1>
-            <a href="https://drive.google.com/file/d/140oDB-KZCUhAcITv4qUnCoXSz24GPEpV/view?usp=share_link">
+            <a href="#">
               <div className="btn btn-success w-full">Download PDF</div>
             </a>
           </div>
