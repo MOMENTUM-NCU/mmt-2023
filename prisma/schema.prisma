@@ -1,0 +1,45 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id          String    @id @default(uuid())
+  email       String    @unique
+  role        String    @default("participant")
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+  tag         String?   @default("")
+  tagnum      Int       @default(autoincrement())
+  fname       String?   @default("")
+  lname       String?   @default("")
+  pnumber     String?   @default("")
+  address     String?   @default("")
+  dob         String?   @default("")
+  gender      String?   @default("Male")
+  yearOfStudy String?   @default("")
+  college     String?   @default("")
+  Payment     Payment[]
+}
+
+model Payment {
+  id               String   @id
+  status           String
+  eventId          String
+  amount           String
+  currency         String   @default("INR")
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+  t_verify_user    Boolean  @default(false)
+  t_verify_user_at DateTime @default(now())
+  t_verify_rpay    Boolean  @default(false)
+  team_name        String   @default("")
+  user             User     @relation(fields: [userId], references: [id])
+  userId           String
+
+  @@unique([userId, eventId])
+}

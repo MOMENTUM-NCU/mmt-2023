@@ -1,0 +1,103 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+:root {
+  font-family: "Inter", sans-serif, system-ui, sans-serif;
+  scroll-behavior: smooth;
+}
+
+@layer components {
+  .btn-register {
+    @apply border-solid border-2 border-white text-white p-2 hover:text-black hover:bg-white;
+  }
+
+  .nav-link-text {
+    @apply text-gray-200 hover:text-purple-400;
+    @apply text-sm;
+  }
+
+  .bg-1 {
+    background-image: url("../public/FINAL.png");
+    aspect-ratio: 16/9;
+    width: 100vw;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .bg-2 {
+    @apply bg-gradient-to-b from-[#6d208d] via-violet-800 to-violet-700;
+  }
+
+  /* .bg-3 {
+    background-image: url("../public/SVG/image.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top;
+  } */
+
+  .bg-profile {
+    background-image: url("../public/profile_bg.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .bg-event {
+    background-image: url("../public/events_bg.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .bg-faq {
+    background-image: url("../public/faq_bg.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .translucent-effect {
+    -webkit-backdrop-filter: blur(59.3826px);
+    backdrop-filter: blur(59.3826px);
+    background: linear-gradient(
+      164.86deg,
+      rgba(171, 165, 248, 0.2) 43.85%,
+      rgba(38, 32, 48, 0.25) 164.42%
+    );
+  }
+
+  .countdown-title {
+    @apply text-white capitalize italic;
+    @apply text-3xl sm:text-6xl;
+    @apply p-4 md:mb-5;
+    @apply drop-shadow-2xl;
+  }
+
+  .time-card {
+    -webkit-backdrop-filter: blur(59.3826px);
+    backdrop-filter: blur(59.3826px);
+    background: linear-gradient(
+      164.86deg,
+      rgba(171, 165, 248, 0.2) 43.85%,
+      rgba(38, 32, 48, 0.25) 164.42%
+    );
+    @apply text-white my-5 mx-10 p-3 sm:p-6 2xl:p-12 rounded-2xl;
+    /* border-right: 10px solid #5f3dc4; */
+    filter: drop-shadow(0 0 0.75rem rgba(0, 0, 0, 0.15));
+  }
+
+  .time-card-text-wrapper {
+    @apply flex flex-col items-center justify-center;
+    @apply text-center;
+  }
+
+  .event-tab {
+    @apply rounded-lg text-base capitalize font-medium leading-5 text-black;
+    @apply focus:outline-none;
+    @apply transition ease-in-out duration-150;
+    @apply px-5 py-1;
+  }
+}
