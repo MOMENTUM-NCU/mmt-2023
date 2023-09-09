@@ -2,7 +2,8 @@ import Link from "next/link";
 import Image from "next/image";
 export default function EventCard(e) {
   const event = e.event;
-  const s3url = `https://momentum-poster-s3.s3.ap-south-1.amazonaws.com/poster/${event.id}.webp`;
+  //const s3url = `https://momentum-poster-s3.s3.ap-south-1.amazonaws.com/poster/${event.id}.webp`;
+  const s3url = `https://picsum.photos/200`;
   return (
     <Link href={`./event/${event.id}`}>
       <div>
@@ -11,7 +12,9 @@ export default function EventCard(e) {
             <Image src={s3url} layout="fill" alt="event_poster" />
           </div>
           <div className="absolute opacity-0 hover:opacity-100  w-full h-full flex justify-center items-center flex-col hover:backdrop-blur-md hover:backdrop-brightness-75 duration-150">
-            <h1 className=" text-3xl text-white font-bold text-center ">{event.name}</h1>
+            <h1 className=" text-3xl text-white font-bold text-center ">
+              {event.name}
+            </h1>
             <p className=" text-white ">{event.shortDesc}</p>
           </div>
         </div>

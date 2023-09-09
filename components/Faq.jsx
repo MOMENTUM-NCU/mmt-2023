@@ -19,10 +19,6 @@ const faqs = [
     ques: "Will there be food stalls in the fest ?",
     ans: "Yes, there will be a lot of food stalls in the fest.",
   },
-  {
-    ques: "Can we refund registration fee if we did not attend the event ?",
-    ans: "No, Registration fee cannot be refunded for any scenario",
-  },
 ];
 
 export default function FAQ() {

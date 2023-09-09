@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import titleLogo from "../public/Momentum_signature_white_wb.png";
+import CountDown from "./CountDown";
 export default function Hero() {
   return (
     <>
@@ -14,9 +15,12 @@ export default function Hero() {
             <div className="flex justify-center mb-10">
               <Link href={"/event"}>
                 <a className="inline-flex text-white bg-purple-500 border-0 py-2 px-6 focus:outline-none hover:bg-purple-600 rounded text-lg">
-                  Check Events
+                  Register for Events
                 </a>
               </Link>
+            </div>
+            <div className="flex justify-center m-5">
+              <CountDown till="11/04/22" />
             </div>
           </div>
         </div>

@@ -1,4 +1,5 @@
 import logo from "../public/M_logo_white.png";
+import Login from "./Login";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -20,11 +21,6 @@ export default function Navbar() {
               </Link>
             </li>
             <li>
-              <Link href={"/schedule"}>
-                <a>Schedule</a>
-              </Link>
-            </li>
-            <li>
               <Link href={"/faq"}>
                 <a>FAQs</a>
               </Link>
@@ -32,9 +28,7 @@ export default function Navbar() {
           </ul>
         </div>
         <div className="justify-end pr-2 sm:pr-20">
-          <Link href={"/results"}>
-            <div className="btn btn-success">Results</div>
-          </Link>
+          <Login />
         </div>
       </div>
     </>
