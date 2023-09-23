@@ -26,7 +26,7 @@ export default function Events({ events }) {
     "Literary",
   ];
   return (
-    <div className="h-full min-h-screen py-[80px] bg-[#2a303c]">
+    <div className="h-full min-h-screen py-[80px] bg-[#1a1a1a]">
       <div className="sm:hidden block px-8 py-8">
         <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">
           Event Categories

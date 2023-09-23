@@ -4,9 +4,27 @@ import Link from "next/link";
 import Image from "next/image";
 
 export default function Navbar() {
+  const navItems = [
+    {
+      itemName: "About",
+      href: "#",
+    },
+    {
+      itemName: "Events",
+      href: "/event",
+    },
+    {
+      itemName: "FAQs",
+      href: "/faq",
+    },
+    {
+      itemName: "Sponsors",
+      href: "#",
+    },
+  ];
   return (
     <>
-      <div className="z-20 navbar bg-[#1f242d] text-gray-100 fixed sm:pl-20">
+      <div className="z-20 navbar bg-transparent text-gray-100 fixed sm:pl-20">
         <Link href={"/"}>
           <a className="btn btn-ghost">
             <Image height={45} width={45} src={logo} alt="Momentum_22_logo" />
@@ -15,16 +33,15 @@ export default function Navbar() {
 
         <div className="navbar-center flex mx-auto">
           <ul className="menu menu-horizontal p-0">
-            <li>
-              <Link href={"/event"}>
-                <a>Events</a>
-              </Link>
-            </li>
-            <li>
-              <Link href={"/faq"}>
-                <a>FAQs</a>
-              </Link>
-            </li>
+            {navItems.map((val, key) => {
+              return (
+                <li key={key} className="font-bold text-2xl">
+                  <Link href={val.href}>
+                    <a>{val.itemName}</a>
+                  </Link>
+                </li>
+              );
+            })}
           </ul>
         </div>
         <div className="justify-end pr-2 sm:pr-20">
