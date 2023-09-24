@@ -5,9 +5,6 @@ import { signOut } from "next-auth/react";
 import Spinner from "./Spinner";
 import { useEffect, useState } from "react";
 import Google from "next-auth/providers/google";
-// import { useState } from 'react';
-import { useRouter } from 'next/router';
-
 
 const getDetails = async () => {
   const response = await fetch(`/api/user/profile/`);
@@ -26,7 +23,6 @@ const checkDoesProfileNeedUpdate = async () => {
 export default function Login() {
   const { data: session, status } = useSession();
   const [isProfileNeedUpdate, setIsProfileNeedUpdate] = useState(false);
-
   useEffect(() => {
     if (session) checkDoesProfileNeedUpdate().then(setIsProfileNeedUpdate);
   }, [session]);
@@ -71,11 +67,6 @@ export default function Login() {
             </Link>
           </li>
           <li>
-            <Link href={"/ca"}>
-              <a>Register CA</a>
-            </Link>
-          </li>
-          <li>
             <a
               className="bg-error text-black"
               onClick={() =>
@@ -113,13 +104,8 @@ export default function Login() {
   } else {
     // login button
     return (
-      // <div className="btn btn-success" onClick={() => signIn("google")}>
-      //   Login
-      // </div>
-      <div className="btn btn-success" onClick={() => {
-        signIn("google")
-        }}>
-         Login
+      <div className="btn btn-success" onClick={() => signIn("google")}>
+        Login
       </div>
     );
   }

@@ -19,9 +19,9 @@ export default function Hero() {
                 </a>
               </Link>
             </div>
-            <div className="flex justify-center m-5">
+            {/* <div className="flex justify-center m-5">
               <CountDown till="11/04/22" />
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

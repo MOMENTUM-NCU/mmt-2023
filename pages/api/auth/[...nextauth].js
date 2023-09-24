@@ -2,6 +2,11 @@ import NextAuth from "next-auth/next";
 import GoogleProvider from "next-auth/providers/google";
 import CredentialsProvider from "next-auth/providers/credentials";
 import DB from "@db";
+// import campuspage from "@/campus/campusPage"
+import checkLogin from 'pages/redirectCA';
+import redirectCA from "pages/redirectCA";
+
+
 
 const loginWithEmail = CredentialsProvider({
   name: "Email",
@@ -29,12 +34,25 @@ const loginWithGoogle = GoogleProvider({
   clientSecret: process.env.GOOGLE_CLIENT_SECRET,
 });
 
+// function redirectToCa() {
+//   window.location.href = '/campus/campusPage';
+// }
+
+// Usage in JSX/HTML:
 const providers = [loginWithEmail, loginWithGoogle];
 const callbacks = {
   async signIn({ user, account, profile, email, credentials }) {
     return true;
   },
   async redirect({ url, baseUrl }) {
+    // if(checkLogin===1){
+    //   url = '/campus/campusPage';
+    //   return url;
+    // }
+    // else if(checkLogin===0){
+    //   return url;
+    // }
+    //console.log('this is the checkLogin', checkLogin);
     return url;
   },
   async session({ session, user, token }) {

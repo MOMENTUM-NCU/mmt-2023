@@ -2,7 +2,9 @@
 import { getCsrfToken } from "next-auth/react";
 
 export default function SignIn({ csrfToken }) {
-  return "Sign In Page";
+ return "Sign In Page";
+  // return (
+  //   <div>
   //     <div>
   //       <form action="/api/auth/callback/credentials" method="POST">
   //         <input type="hidden" name="csrfToken" value={csrfToken} />
@@ -28,6 +30,24 @@ export default function SignIn({ csrfToken }) {
   //             type="password"
   //             placeholder=""
   //             label="Password"
+  //           />
+  //           <input
+  //             type="checkbox"
+  //             id="squareCheckbox"
+  //             className="h-4 w-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-200"
+  //           />
+  //           <label for="squareCheckbox" class="text-gray-800">
+  //             Square Checkbox
+  //           </label>
+  //           <label htmlFor="input-campus-ambassador-for-credentials-provider">
+  //             Referral code
+  //           </label>
+  //           <input
+  //             name="refcode"
+  //             id="input-campus-ambassador-for-credentials-provider"
+  //             type="refcode"
+  //             placeholder=""
+  //             label="refcode"
   //           />
   //         </div>
   //         <button type="submit">Sign in with Email</button>
