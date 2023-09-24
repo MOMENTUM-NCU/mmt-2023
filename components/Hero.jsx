@@ -3,6 +3,7 @@ import Link from "next/link";
 import titleLogo from "../public/Momentum_signature_white_wb.png";
 import CountDown from "./CountDown";
 import logo from '../public/M_logo_white.png';
+import FAQ from "./Faq";
 // import momentum23 from '../public/momentum23.mp4';
 
 export default function Hero() {
@@ -32,7 +33,7 @@ export default function Hero() {
           </div>
         </div>
       </div>
-      <div className="h-screen w-screen flex justify-evenly items-center items-center flex-row bg-black">
+      <div className="h-screen w-screen flex justify-evenly items-center flex-row bg-black">
         <div className=" h-auto w-2/4" >
           <div className="text-3xl font-bold">POWERED BY</div>
           <div className="text-7xl -mt-2 font-extrabold" data-aos="zoom-out">THE NORTHCAP UNIVERSITY</div>
@@ -128,17 +129,7 @@ export default function Hero() {
         </div>
       </div>
       {/* FAQ */}
-      <div className="h-screen bg-black mt-20 flex-col justify-center items-center ">
-        <div className="flex bg-red-900 text-7xl font-bold">FAQs</div>
-        <div className="h-screen bg-red-900 mt-10 flex flex-col justify-evenly items-center mx-auto container">
-          <div className="bg-yellow-900 flex justify-center w-96 border">
-            lkmlm
-          </div>
-          <div className="bg-yellow-900 flex justify-center w-96 border">
-            lkmlm
-          </div>
-        </div>
-      </div>
+      <FAQ/>
     </>
   );
 }

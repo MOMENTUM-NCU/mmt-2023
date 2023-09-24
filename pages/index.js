@@ -6,7 +6,7 @@ export default function Home() {
     <>
       <Hero />
       {/* Main Section */}
-      <About />
+      {/* <About /> */}
     </>
   );
 }
