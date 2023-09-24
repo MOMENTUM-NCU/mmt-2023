@@ -13,6 +13,7 @@
     "@headlessui/react": "^1.7.2",
     "@heroicons/react": "^2.0.11",
     "@prisma/client": "^4.4.0",
+    "aos": "^2.3.4",
     "daisyui": "^2.31.0",
     "fuzzysort": "^2.0.1",
     "next": "12.3.0",

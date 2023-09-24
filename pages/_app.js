@@ -4,8 +4,19 @@ import Head from "next/head";
 import Navbar from "../components/Navbar";
 import Footer from "@/components/Footer";
 import { SessionProvider } from "next-auth/react";
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
+// import "../scss/style.scss";
 
 function MyApp({ Component, pageProps, session }) {
+  useEffect(()=>{
+    AOS.init({
+      easing: "ease-out-cubic",
+      once: true,
+      offset: 50,
+    });
+  },[])
   return (
     <SessionProvider session={session}>
       <Head>
