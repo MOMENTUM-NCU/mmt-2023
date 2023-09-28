@@ -6,28 +6,28 @@ import Image from "next/image";
 export default function Navbar() {
   const navItems = [
     {
-      itemName: "About",
-      href: "#",
+      itemName: "ABOUT",
+      href: "#aboutNCU",
     },
     {
-      itemName: "Events",
+      itemName: "EVENTS",
       href: "/event",
     },
     {
-      itemName: "FAQs",
-      href: "/faq",
+      itemName: "SPONSORS",
+      href: "#sponsorsNCU",
     },
     {
-      itemName: "Sponsors",
-      href: "#",
+      itemName: "FAQs",
+      href: "#faqNCU  ",
     },
   ];
   return (
     <>
-      <div className="z-20 navbar bg-transparent text-gray-100 fixed sm:pl-20">
+      <div className="z-20 navbar bg-transparent text-white fixed  h-fit" data-aos="fade-down">
         <Link href={"/"}>
-          <a className="btn btn-ghost">
-            <Image height={45} width={45} src={logo} alt="Momentum_22_logo" />
+          <a className="btn-ghost">
+            <Image height={65} width={65} src={logo} alt="Momentum_22_logo" className=""/>
           </a>
         </Link>
 
@@ -35,7 +35,7 @@ export default function Navbar() {
           <ul className="menu menu-horizontal p-0">
             {navItems.map((val, key) => {
               return (
-                <li key={key} className="font-bold text-2xl">
+                <li key={key} className="hover:font-semibold lg:text-4xl sm:text-2xl font-thin">
                   <Link href={val.href}>
                     <a>{val.itemName}</a>
                   </Link>

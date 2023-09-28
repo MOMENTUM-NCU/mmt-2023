@@ -2,24 +2,77 @@ import Image from "next/image";
 import Link from "next/link";
 import titleLogo from "../public/Momentum_signature_white_wb.png";
 import CountDown from "./CountDown";
-import logo from '../public/M_logo_white.png';
+import logo from '../public/UGC And NCU Logos White-01.png';
 import FAQ from "./Faq";
+import { useEffect } from "react";
+import Navbar from "./Navbar";
+import ShootingStars from "./ShootingStars";
 // import momentum23 from '../public/momentum23.mp4';
 
 export default function Hero() {
+  useEffect(()=>{
+    window.addEventListener('scroll',(event)=>{
+      let navBG= document.querySelector(".navbar");
+      navBG.classList.toggle("sticky",window.scrollY>0);
+      console.log(navBG);
+    })
+  },[])
+  let sponsors=[
+    {
+      src:"/Addidas.png"
+    },
+    {
+      src:"/Addidas.png"
+    },
+    {
+      src:"/Addidas.png"
+    },
+    {
+      src:"/Addidas.png"
+    },
+    {
+      src:"/Addidas.png"
+    },
+    {
+      src:"/Addidas.png"
+    },
+    {
+      src:"/Addidas.png"
+    },
+    {
+      src:"/Addidas.png"
+    },
+    {
+      src:"/Addidas.png"
+    },
+    {
+      src:"/Addidas.png"
+    },
+    {
+      src:"/Addidas.png"
+    }
+  ]
   return (
     <>
-      {/* <div>
-        <Image className="bg-1" src="/public/images/hero.jpg" height={100} width={100}/>
-      </div> */}
+      <ShootingStars></ShootingStars>
       <div className="text-gray-400 body-font h-screen w-full bg-1 flex">
-        <div className="container mx-auto flex px-5 py-24 items-center justify-center flex-col">
+        <div className="container mx-auto flex px-5 py-24 items-center justify-center flex-col" >
 
-          <div className="h-43"></div>
-          <div className="mb-10 max-w-[345px] md:max-w-[550px]">
-            <Image src={titleLogo} alt="Momentum 2022" />
+          <div className="flex-col">
+            {/* <Image src={titleLogo} alt="Momentum 2022" /> */}
+            <div className="font-extrabold lg:text-8xl md:text-6xl text-5xl text-white tracking-tighter " data-aos="zoom-in">
+              MOMENTUM 2023
+            </div>
+            <div className="flex w-full justify-between text-white ">
+              <div className="lg:text-3xl text-2xl ml-2 -mt-1 font-thin" data-aos="fade-down">
+                NOVA NEXUS
+              </div>
+              <div className="lg:text-5xl md:text-3xl text-2xl mt-2 font-semibold" data-aos="fade-down">
+                3<sup>rd</sup> TO 4<sup>th</sup> NOVEMBER
+              </div>
+            </div>
           </div>
-          <div className="text-center lg:w-2/3 mx-auto">
+          {/* <div className="text-center lg:w-2/3 mx-auto">
             <div className="flex justify-center mb-10">
               <Link href={"/event"}>
                 <a className="inline-flex text-white bg-purple-500 border-0 py-2 px-6 focus:outline-none hover:bg-purple-600 rounded text-lg" data-aos="fade-in">
@@ -30,15 +83,17 @@ export default function Hero() {
             <div className="flex justify-center m-5">
               <CountDown till="11/04/22" />
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
-      <div className="h-screen w-screen flex justify-evenly items-center flex-row bg-black">
-        <div className=" h-auto w-2/4" >
-          <div className="text-3xl font-bold">POWERED BY</div>
-          <div className="text-7xl -mt-2 font-extrabold" data-aos="zoom-out">THE NORTHCAP UNIVERSITY</div>
-          <div className="text-4xl  font-semibold tracking-widest" data-aos="zoom-out">Based in Gurgaon, Haryana</div>
-          <div className="text-2xl mt-3" data-aos="fade-left">The NorthCap University (NCU), Gurugram, is a progressive multidisciplinary university
+      
+      <div className="h-fit w-screen flex justify-evenly items-center flex-row sm:mt-0 mt-20" id="aboutNCU" onS>
+        <div className=" h-auto w-2/4 sm:mt-20 " >
+          <div className="xl:text-3xl md:text-2xl font-bold">POWERED BY</div>
+          <div className="xl:text-7xl md:text-6xl text-4xl -mt-2 font-extrabold" data-aos="zoom-out">THE NORTHCAP UNIVERSITY</div>
+          <div className="xl:text-4xl md:text-3xl text-2xl font-semibold tracking-widest text" data-aos="zoom-out">Based in Gurgaon, Haryana</div>
+          <div className="xl:text-2xl mt-3 " data-aos="fade-left" >
+            The NorthCap University (NCU), Gurugram, is a progressive multidisciplinary university
             located in the city of Gurugram, Haryana. The University operates three schools in the
             disciplines of Engineering & and Technology, Management & Liberal Arts, and Law, and
             has a dedicated Department of Applied Sciences. NCU is a National Assessment and
@@ -49,87 +104,103 @@ export default function Hero() {
           </div>
         </div>
         <div className="h-auto ">
-          <Image src={logo} alt="Not Loading" height={400} width={400}/>
+          <Image src={logo} alt="Not Loading"  height={150} width={150} className="lg:h-30" data-aos="zoom-in"/>
         </div>
       </div>
-      <div className="h-screen bg-black flex justify-center w-screen" >
-        <video muted loop autoPlay className="h-screen">
+      <div className="h-fit flex justify-center w-screen mt-20">
+        <video muted loop autoPlay className="h-full w-screen " data-aos="zoom-in">
           <source src="/momentum23.webm" type="video/webm"/>
         </video>
       </div>
-      <div className="h-fit w-fit flex-col justify-center items-center mt-10">
-        <div className="mt-20 font-bold text-9xl bg-black h-auto flex  justify-center items-center">
-          OUR EVENTS
+      <div className="h-fit w-fit flex-col justify-center items-center mt-10" id="eventsNCU">
+        <div className="mt-20 font-bold lg:text-9xl text-6xl  h-auto flex justify-center items-center" data-aos="fade-down">
+          GLIMPSES
         </div>
-        <div className="mt-16 bg-black h-fit w-screen flex-col justify-evenly items-center">
+        <div className="mt-16 h-fit w-screen flex-col justify-evenly items-center">
           <div className="w-screen h-fit flex justify-evenly items-center">
-            <div className="h-4/5 w-2/5  flex-col  justify-center hover:border cursor-pointer">
-                <video src="/video2.mp4" autoPlay loop muted className="w-fit"></video>
-                <div className=" w-4/5 mt-8 ml-12 ">
-                  <div className="font-semibold text-3xl">Night Event</div>
-                  <div className="font-bold text-6xl" >DJ NIGHT</div>
-                  <div className="font-thin">Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, consequatur?</div>
+            <div className="h-4/5 w-2/5 flex-col  justify-evenly hover:border cursor-pointer" data-aos="fade-right">
+                <video src="/123.mp4" autoPlay loop muted className="w-fit"></video>
+                <div className=" w-full mt-8 lg:ml-4 ">
+                  {/* <div className="font-semibold text-3xl" data-aos="fade-down">Night Event</div> */}
+                  <div className="font-bold lg:text-4xl md:text-3xl" data-aos="fade-down">DJ NIGHT</div>
+                  <div className="font-thin" data-aos="fade-down">Get ready to dance the night away as our DJ spins the hottest tracks under the dazzling lights.</div>
                 </div>
             </div>
-            <div className="h-4/5 w-2/5  flex-col justify-center hover:border cursor-pointer">
+            <div className="h-4/5 w-2/5  flex-col justify-center hover:border cursor-pointer" data-aos="fade-left">
                 <video src="/video2.mp4" autoPlay loop muted className="w-fit"></video>
-                <div className=" w-4/5 mt-8 ml-12 ">
-                  <div className="font-semibold text-3xl">Night Event</div>
-                  <div className="font-bold text-6xl" >DJ NIGHT</div>
-                  <div className="font-thin">Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, consequatur?</div>
+                <div className=" w-full mt-8 lg:ml-4 ">
+                  {/* <div className="font-semibold text-3xl" data-aos="fade-down">Night Event</div> */}
+                  <div className="font-bold lg:text-4xl md:text-3xl" data-aos="fade-down">Artist Night</div>
+                  <div className="font-thin " data-aos="fade-down">A night of creativity and inspiration awaits as we showcase the talents of local and emerging artists.</div>
                 </div>
             </div>
           </div>
           <div className="w-screen h-fit flex justify-evenly items-center mt-16">
-            <div className="h-4/5 w-2/5  flex-col  justify-center hover:border cursor-pointer">
-                <video src="/video2.mp4" autoPlay loop muted className="w-fit"></video>
-                <div className=" w-4/5 mt-8 ml-12 ">
-                  <div className="font-semibold text-3xl">Night Event</div>
-                  <div className="font-bold text-6xl" >DJ NIGHT</div>
-                  <div className="font-thin">Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, consequatur?</div>
+            <div className="h-4/5 w-2/5  flex-col  justify-center hover:border cursor-pointer" data-aos="fade-right">
+                <video src="/124-1.mp4" autoPlay loop muted className="w-fit"></video>
+                <div className="  w-full mt-8 lg:ml-4 ">
+                  {/* <div className="font-semibold text-3xl" data-aos="fade-down">Night Event</div> */}
+                  <div className="font-bold lg:text-4xl md:text-3xl" data-aos="fade-down"> Rap Ground</div>
+                  <div className="font-thin" data-aos="fade-down">Step into the world of rhythm and rhymes at Rap Ground, where lyrical prowess takes center stage.</div>
                 </div>
             </div>
-            <div className="h-4/5 w-2/5  flex-col justify-center hover:border cursor-pointer">
-                <video src="/video2.mp4" autoPlay loop muted className="w-fit"></video>
-                <div className=" w-4/5 mt-8 ml-12 ">
-                  <div className="font-semibold text-3xl">Night Event</div>
-                  <div className="font-bold text-6xl" >DJ NIGHT</div>
-                  <div className="font-thin">Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, consequatur?</div>
+            <div className="h-4/5 w-2/5  flex-col justify-center hover:border cursor-pointer" data-aos="fade-left">
+                <video src="/video1.mp4" autoPlay loop muted className="w-fit"></video>
+                <div className=" w-full mt-8 lg:ml-4 ">
+                  {/* <div className="font-semibold text-3xl" data-aos="fade-down">Night Event</div> */}
+                  <div className="font-bold lg:text-4xl md:text-3xl w-full" data-aos="fade-down">Inaugural Ceremony</div>
+                  <div className="font-thin"data-aos="fade-down">Join us for a grand inauguration that marks the beginning of an unforgettable journey</div>
                 </div>
             </div>
           </div>
           <div className=" mt-20 flex justify-center items-center">
-            <button className="border-2 rounded-full flex justify-center items-center h-20 w-1/5 font-black text-5xl hover:bg-white">
-              SEE ALL
+            <button className="border-2 rounded-full flex justify-center items-center h-20 w-2/6 font-black lg:text-4xl md:text-3xl hover:bg-white" data-aos="zoom-in" >
+              <Link href={"/event"} alt="">
+                SEE ALL
+              </Link>
             </button>
           </div>
         </div>
       </div>
       {/* sponsors */}
-      <div className="mt-20 h-fit bg-black flex-col justify-evenly items-center">
-        <div className=" text-7xl font-bold">
+      <div className="mt-20 h-fit flex-col justify-evenly items-center" id="sponsorsNCU">
+        <div className="lg:text-7xl md:text-6xl text-4xl font-bold text-left ml-5" data-aos="fade-right">
           SPONSORED BY
         </div>
-        <div className="sponsorStrip1 mt-16 h-20 flex justify-evenly items-center">
-          <Image src="/Addidas.png" height={70} width={150}></Image>
-          <Image src="/Addidas.png" height={70} width={150}></Image>
-          <Image src="/Addidas.png" height={70} width={150}></Image>
-          <Image src="/Addidas.png" height={70} width={150}></Image>
-          <Image src="/Addidas.png" height={70} width={150}></Image>
-          <Image src="/Addidas.png" height={70} width={150}></Image>
-        </div>
-        
-        <div className="sponsorStrip1 mt-14 h-20 flex justify-evenly items-center">
-          <Image src="/Addidas.png" height={70} width={150}></Image>
-          <Image src="/Addidas.png" height={70} width={150}></Image>
-          <Image src="/Addidas.png" height={70} width={150}></Image>
-          <Image src="/Addidas.png" height={70} width={150}></Image>
-          <Image src="/Addidas.png" height={70} width={150}></Image>
-          <Image src="/Addidas.png" height={70} width={150}></Image>
+        <div className="flex-col justify-center">
+          <div className="sponsorStrip1 mt-16 h-20 flex justify-evenly items-center" data-aos="fade-right">
+            {
+              sponsors.map((a)=>{
+                return (
+                  <>
+                    <Image src={a.src} height={70} width={150} alt={a.src}/>
+                  </>
+                )
+              })
+            }
+          </div>
+          
+          <div className="sponsorStrip2 mt-14 h-20 flex justify-evenly items-center" data-aos="fade-left">
+          {
+              sponsors.map((a)=>{
+                return (
+                  <>
+                    <Image src={a.src} height={70} width={150} alt={a.src}/>
+                  </>
+                )
+              })
+            }
+          </div>
         </div>
       </div>
       {/* FAQ */}
       <FAQ/>
+      {/* Footer */}
+      <div className="h-96 footer2023 flex items-center justify-center font-extrabold  tracking-tighter " data-aos="zoom-out">
+        <div data-aos="zoom-in " className="lg:text-7xl md:text-5xl text-4xl">
+          Let the Magic Begin...
+        </div>
+      </div>
     </>
   );
 }
