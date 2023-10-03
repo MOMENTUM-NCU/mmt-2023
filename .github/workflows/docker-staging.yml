@@ -23,7 +23,7 @@ jobs:
       with:
             username: 'root'
             server: '143.110.254.185'
-            ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY_PROD }} 
+            ssh_private_key: ${{ secrets.SSH_STAGING_KEY }} 
             local_path: './dimg/*'
             remote_path: '/root/service/dimg'
             sftpArgs: '-o ConnectTimeout=5'
@@ -33,7 +33,7 @@ jobs:
       with:
         host: '143.110.254.185'
         username: 'root'
-        key: ${{ secrets.SSH_PRIVATE_KEY_PROD }}
+        key: ${{ secrets.SSH_STAGING_KEY }}
         port: '22'
         script: |
                 sudo docker load -i /root/service/dimg/$(ls -t /root/service/dimg | head -1)
