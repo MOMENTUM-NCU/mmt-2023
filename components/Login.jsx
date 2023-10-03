@@ -47,36 +47,34 @@ export default function Login() {
           className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-[#2a303c] rounded-box w-52"
         >
           <li>
-            <Link href={"/profile"}>
-              <a className="justify-between">
+            <Link href={"/profile"} className="justify-between">
+             
                 Profile
                 {isProfileNeedUpdate && (
                   <span className="badge badge-warning">Update</span>
                 )}
-              </a>
+           
             </Link>
           </li>
           <li>
             <Link href={"/tickets"}>
-              <a>My Tickets</a>
+             My Tickets
             </Link>
           </li>
           <li>
             <Link href={"/myqr"}>
-              <a>Entry QR Code</a>
+            Entry QR Code
             </Link>
           </li>
-          <li>
-            <a
-              className="bg-error text-black"
+          <li className="bg-error text-black"
               onClick={() =>
                 signOut({
                   callbackUrl: `${window.location.origin}`,
                 })
-              }
-            >
+              }>
+          
               Logout
-            </a>
+          
           </li>
         </ul>
       </div>

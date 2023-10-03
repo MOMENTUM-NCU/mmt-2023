@@ -1,5 +1,4 @@
 import { getEvents } from "lib/eventList";
-import Link from "next/link";
 import EventCard from "@/components/newUI/eventCard";
 import PageWrapper from "@/components/PageWrapper";
 import { useRef, useState } from "react";

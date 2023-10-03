@@ -41,7 +41,7 @@ export function MobibleNav({ navLinks }) {
                 return (
                   <Link href={item.href} key={item.name}>
                     <Disclosure.Button
-                      as="a"
+                      as="span"
                       className="text-white hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
                     >
                       {item.name.toUpperCase()}
