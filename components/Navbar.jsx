@@ -1,4 +1,4 @@
-import logo from "../public/M_logo_white.png";
+import logo from "../public/Logo-03.png";
 import Login from "./Login";
 import Link from "next/link";
 import Image from "next/image";
@@ -7,7 +7,7 @@ export default function Navbar() {
   const navItems = [
     {
       itemName: "ABOUT",
-      href: "#aboutNCU",
+      href: "/#aboutNCU",
     },
     {
       itemName: "EVENTS",
@@ -15,36 +15,35 @@ export default function Navbar() {
     },
     {
       itemName: "SPONSORS",
-      href: "#sponsorsNCU",
+      href: "/#sponsorsNCU",
     },
     {
       itemName: "FAQs",
-      href: "#faqNCU  ",
+      href: "/#faqNCU  ",
     },
   ];
   return (
     <>
-      <div className="z-20 navbar bg-transparent text-white fixed  h-fit" data-aos="fade-down">
-        <Link href={"/"}>
-          <a className="btn-ghost">
+      <div className="z-20 navbar bg-transparent text-white fixed h-fit" data-aos="fade-down">
+        {/* <Link > */}
+          <a className="btn-ghost ml-5" href={"/"}>
             <Image height={65} width={65} src={logo} alt="Momentum_22_logo" className=""/>
           </a>
-        </Link>
-
+        {/* </Link> */}
         <div className="navbar-center flex mx-auto">
           <ul className="menu menu-horizontal p-0">
             {navItems.map((val, key) => {
               return (
-                <li key={key} className="hover:font-semibold lg:text-4xl sm:text-2xl font-thin">
-                  <Link href={val.href}>
-                    <a>{val.itemName}</a>
-                  </Link>
+                <li key={key} className="hover:font-semibold lg:text-3xl sm:text-2xl font-thin">
+                  {/* <Link > */}
+                    <a href={val.href}>{val.itemName}</a>
+                  {/* </Link> */}
                 </li>
               );
             })}
           </ul>
         </div>
-        <div className="justify-end pr-2 sm:pr-20">
+        <div className="justify-end pr-2 sm:pr-20 rounded-md">
           <Login />
         </div>
       </div>

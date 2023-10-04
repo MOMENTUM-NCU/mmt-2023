@@ -30,7 +30,8 @@ export default function Login() {
   if (session) {
     let user = session.user;
     return (
-      <div className="dropdown dropdown-end mr-5">
+      <>
+      <div className="dropdown dropdown-end mr-5 rounded-md">
         <label
           tabIndex={0}
           className="btn btn-ghost btn-circle avatar indicator"
@@ -80,6 +81,7 @@ export default function Login() {
           </li>
         </ul>
       </div>
+      </>
       // <Link href={"/profile"}>
       //   <a className="flex ">
       //     <div className="grid place-items-center w-8 h-8 rounded-full border-white  border-2 shadow-xl">
@@ -100,6 +102,7 @@ export default function Login() {
       //     </p>
       //   </a>
       // </Link>
+      
     );
   } else {
     // login button

@@ -59,7 +59,6 @@ export default function Hero() {
         <div className="container mx-auto flex px-5 py-24 items-center justify-center flex-col" >
 
           <div className="flex-col">
-            {/* <Image src={titleLogo} alt="Momentum 2022" /> */}
             <div className="font-extrabold lg:text-8xl md:text-6xl text-5xl text-white tracking-tighter " data-aos="zoom-in">
               MOMENTUM 2023
             </div>
@@ -68,22 +67,10 @@ export default function Hero() {
                 NOVA NEXUS
               </div>
               <div className="lg:text-5xl md:text-3xl text-2xl mt-2 font-semibold" data-aos="fade-down">
-                3<sup>rd</sup> TO 4<sup>th</sup> NOVEMBER
+                3<sup>rd</sup> - 4<sup>th</sup> NOVEMBER
               </div>
             </div>
           </div>
-          {/* <div className="text-center lg:w-2/3 mx-auto">
-            <div className="flex justify-center mb-10">
-              <Link href={"/event"}>
-                <a className="inline-flex text-white bg-purple-500 border-0 py-2 px-6 focus:outline-none hover:bg-purple-600 rounded text-lg" data-aos="fade-in">
-                  Register for Events
-                </a>
-              </Link>
-            </div>
-            <div className="flex justify-center m-5">
-              <CountDown till="11/04/22" />
-            </div>
-          </div> */}
         </div>
       </div>
       
@@ -164,7 +151,7 @@ export default function Hero() {
       </div>
       {/* sponsors */}
       <div className="mt-20 h-fit flex-col justify-evenly items-center" id="sponsorsNCU">
-        <div className="lg:text-7xl md:text-6xl text-4xl font-bold text-left ml-5" data-aos="fade-right">
+        <div className="lg:text-9xl md:text-6xl text-4xl font-bold text-left ml-5 flex w-full justify-center" data-aos="fade-right">
           SPONSORED BY
         </div>
         <div className="flex-col justify-center">
