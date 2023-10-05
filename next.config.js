@@ -4,8 +4,11 @@ const nextConfig = {
   swcMinify: true,
   output: "standalone",
   images: {
-    domains: ["lh3.googleusercontent.com",
-      "momentum-poster-s3.s3.ap-south-1.amazonaws.com",],
+    domains: [
+      "lh3.googleusercontent.com",
+      "momentum-poster-s3.s3.ap-south-1.amazonaws.com",
+      "picsum.photos",
+    ],
   },
 };
 module.exports = nextConfig;

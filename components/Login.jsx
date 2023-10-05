@@ -48,33 +48,27 @@ export default function Login() {
         >
           <li>
             <Link href={"/profile"} className="justify-between">
-             
-                Profile
-                {isProfileNeedUpdate && (
-                  <span className="badge badge-warning">Update</span>
-                )}
-           
+              Profile
+              {isProfileNeedUpdate && (
+                <span className="badge badge-warning">Update</span>
+              )}
             </Link>
           </li>
           <li>
-            <Link href={"/tickets"}>
-             My Tickets
-            </Link>
+            <Link href={"/tickets"}>My Tickets</Link>
           </li>
           <li>
-            <Link href={"/myqr"}>
-            Entry QR Code
-            </Link>
+            <Link href={"/myqr"}>Entry QR Code</Link>
           </li>
-          <li className="bg-error text-black"
-              onClick={() =>
-                signOut({
-                  callbackUrl: `${window.location.origin}`,
-                })
-              }>
-          
-              Logout
-          
+          <li
+            className="bg-error text-black"
+            onClick={() =>
+              signOut({
+                callbackUrl: `${window.location.origin}`,
+              })
+            }
+          >
+            Logout
           </li>
         </ul>
       </div>
