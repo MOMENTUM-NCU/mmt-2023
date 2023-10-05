@@ -1,8 +1,27 @@
-import logo from "../public/M_logo_white.png";
+import logo from "../public/Logo-03.png";
+import Login from "./Login";
 import Link from "next/link";
 import Image from "next/image";
 
 export default function Navbar() {
+  const navItems = [
+    {
+      itemName: "ABOUT",
+      href: "/#aboutNCU",
+    },
+    {
+      itemName: "EVENTS",
+      href: "/event",
+    },
+    {
+      itemName: "SPONSORS",
+      href: "/#sponsorsNCU",
+    },
+    {
+      itemName: "FAQs",
+      href: "/#faqNCU  ",
+    },
+  ];
   return (
     <>
       <div className="z-20 navbar bg-[#1f242d] text-gray-100 fixed sm:pl-20">
@@ -31,10 +50,8 @@ export default function Navbar() {
             </li>
           </ul>
         </div>
-        <div className="justify-end pr-2 sm:pr-20">
-          <Link href={"/results"}>
-            <div className="btn btn-success">Results</div>
-          </Link>
+        <div className="justify-end pr-2 sm:pr-20 rounded-md">
+          <Login />
         </div>
       </div>
     </>

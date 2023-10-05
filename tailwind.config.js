@@ -43,7 +43,7 @@ module.exports = {
     logs: true,
     rtl: false,
     prefix: "",
-    darkTheme: "dark",
-    themes: ["dark"],
+    darkTheme: "black",
+    themes: ["black"],
   },
 };
