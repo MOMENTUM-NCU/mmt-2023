@@ -24,7 +24,7 @@ export default function Navbar() {
   ];
   return (
     <>
-      <div className="z-20 navbar bg-transparent text-white fixed h-fit" data-aos="fade-down">
+      <div className="z-20 navbar bg-transparent text-white fixed h-fit w-full" data-aos="fade-down">
         {/* <Link > */}
           <a className="btn-ghost ml-5" href={"/"}>
             <Image height={65} width={65} src={logo} alt="Momentum_22_logo" className=""/>

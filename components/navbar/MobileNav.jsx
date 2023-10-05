@@ -39,14 +39,14 @@ export function MobibleNav({ navLinks }) {
             <div className="space-y-2 pt-0 p-4 text-center">
               {navLinks.map((item) => {
                 return (
-                  <Link href={item.href} key={item.name}>
+                  <a href={item.href} key={item.name}>
                     <Disclosure.Button
                       as="a"
                       className="text-white hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
                     >
                       {item.name.toUpperCase()}
                     </Disclosure.Button>
-                  </Link>
+                  </a>
                 );
               })}
               <Disclosure.Button className="ml-2">

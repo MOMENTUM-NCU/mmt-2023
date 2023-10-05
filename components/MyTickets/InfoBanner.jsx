@@ -21,9 +21,7 @@ const getTR = (index, eventId) => {
       <td>{event.name}</td>
       <td>{event.amount}</td>
       <td>
-        <Link href={eventLink}>
-          <a className="link link-accent">View</a>
-        </Link>
+        <a href={eventLink} className="link link-accent">View</a>
       </td>
     </tr>
   );

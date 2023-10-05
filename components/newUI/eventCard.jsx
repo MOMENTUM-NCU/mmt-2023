@@ -5,7 +5,7 @@ export default function EventCard(e) {
   //const s3url = `https://momentum-poster-s3.s3.ap-south-1.amazonaws.com/poster/${event.id}.webp`;
   const s3url = `https://picsum.photos/200`;
   return (
-    <Link href={`./event/${event.id}`}>
+    <a href={`./event/${event.id}`}>
       <div>
         <div className="relative h-60 w-60 bg-transparent cursor-pointer group drop-shadow-lg rounded-md overflow-hidden shadow-sm">
           <div className=" absolute w-full h-full overflow-clip hover:backdrop-blur-sm">
@@ -22,6 +22,6 @@ export default function EventCard(e) {
           {event.amount}
         </div> */}
       </div>
-    </Link>
+    </a>
   );
 }

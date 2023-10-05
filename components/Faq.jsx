@@ -32,25 +32,25 @@ export default function FAQ() {
         <h1 className="text-left text-gray-200 pb-5 lg:text-9xl md:text-6xl text-4xl font-bold flex w-full justify-center" data-aos="fade-right">
           FAQs
         </h1>
-        <div className="h-fit bg-black  flex-col justify-center items-center ">
-        <div className="h-screen w-fit  flex flex-col justify-evenly items-center mx-auto container">
-        {faqs.map((faq, idx) => {
-          return (
-            <>
-              <div tabIndex={0} key={idx} className="mt-2 w-full max-w-4xl collapse border-[3px] rounded-[32px] border-[#ffffff]" data-aos="fade-down">
-               <div className="collapse-title text-gray-200 lg:text-4xl md:text-3xl text-2xl font-semibold ">
-                 {faq.ques}
-               </div>
-               <div className="collapse-content">
-                 <hr />
-                 <p className="pt-2 text-gray-200 lg:text-4xl md:text-3xl font-extralight">
-                  {faq.ans}
-                  </p>
-               </div>
-             </div>
-            </>
-          );
-        })}
+        <div className="h-full bg-black  flex-col justify-center items-center ">
+        <div className="h-full w-fit  flex flex-col justify-evenly items-center mx-auto container">
+          {faqs.map((faq, idx) => {
+            return (
+              <>
+                <div tabIndex={0} key={idx} className="mt-2 w-full max-w-4xl collapse border-[3px] rounded-[32px] border-[#ffffff]" data-aos="fade-down">
+                <div className="collapse-title text-gray-200 text-2xl font-semibold ">
+                  {faq.ques}
+                </div>
+                <div className="collapse-content">
+                  <hr />
+                  <p className="pt-2 text-gray-200 text-2xl  font-extralight">
+                    {faq.ans}
+                    </p>
+                </div>
+              </div>
+              </>
+            );
+          })}
         </div>
       </div>
       </div>

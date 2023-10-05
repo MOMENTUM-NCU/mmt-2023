@@ -17,9 +17,7 @@ const EventCard = ({ event }) => {
         </div>
         <p className="min-h-12">{event.shortDesc}</p>
         <div className="card-actions justify-end">
-          <Link href={eventLink}>
-            <a className="btn btn-primary">Know More</a>
-          </Link>
+          <a href={eventLink} className="btn btn-primary">Know More</a>
         </div>
       </div>
     </div>

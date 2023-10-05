@@ -12,9 +12,7 @@ export default function Account({ events, email, eventsData }) {
         <td>{event.name}</td>
         <td>{event.amount}</td>
         <td>
-          <Link href={eventLink}>
-            <a className="link link-accent">View</a>
-          </Link>
+            <a className="link link-accent" href={eventLink}>View</a>
         </td>
       </tr>
     );

@@ -14,7 +14,7 @@ export default function Hero() {
     window.addEventListener('scroll',(event)=>{
       let navBG= document.querySelector(".navbar");
       navBG.classList.toggle("sticky",window.scrollY>0);
-      console.log(navBG);
+      // console.log(navBG);
     })
   },[])
   let sponsors=[
@@ -142,20 +142,20 @@ export default function Hero() {
           </div>
           <div className=" mt-20 flex justify-center items-center">
             <button className="border-2 rounded-full flex justify-center items-center h-20 w-2/6 font-black lg:text-4xl md:text-3xl hover:bg-white" data-aos="zoom-in" >
-              <Link href={"/event"} alt="">
+              <a href={"/event"} alt="">
                 SEE ALL
-              </Link>
+              </a>
             </button>
           </div>
         </div>
       </div>
       {/* sponsors */}
-      <div className="mt-20 h-fit flex-col justify-evenly items-center" id="sponsorsNCU">
+      {/* <div className="mt-20 h-fit flex-col justify-evenly items-center" id="sponsorsNCU">
         <div className="lg:text-9xl md:text-6xl text-4xl font-bold text-left ml-5 flex w-full justify-center" data-aos="fade-right">
           SPONSORED BY
         </div>
         <div className="flex-col justify-center">
-          <div className="sponsorStrip1 mt-16 h-20 flex justify-evenly items-center" data-aos="fade-right">
+          <div className=" mt-16 h-20 flex justify-evenly items-center" data-aos="fade-right">
             {
               sponsors.map((a)=>{
                 return (
@@ -167,7 +167,7 @@ export default function Hero() {
             }
           </div>
           
-          <div className="sponsorStrip2 mt-14 h-20 flex justify-evenly items-center" data-aos="fade-left">
+          <div className="mt-14 h-20 flex justify-evenly items-center" data-aos="fade-left">
           {
               sponsors.map((a)=>{
                 return (
@@ -179,7 +179,7 @@ export default function Hero() {
             }
           </div>
         </div>
-      </div>
+      </div> */}
       {/* FAQ */}
       <FAQ/>
       {/* Footer */}

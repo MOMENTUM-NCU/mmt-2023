@@ -48,24 +48,18 @@ export default function Login() {
           className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-[#2a303c] rounded-box w-52"
         >
           <li>
-            <Link href={"/profile"}>
-              <a className="justify-between">
+              <a className="justify-between" href={"/profile"}>
                 Profile
                 {isProfileNeedUpdate && (
                   <span className="badge badge-warning">Update</span>
                 )}
               </a>
-            </Link>
           </li>
           <li>
-            <Link href={"/tickets"}>
-              <a>My Tickets</a>
-            </Link>
+              <a href={"/tickets"}>My Tickets</a>
           </li>
           <li>
-            <Link href={"/myqr"}>
-              <a>Entry QR Code</a>
-            </Link>
+              <a href={"/myqr"}>Entry QR Code</a>
           </li>
           <li>
             <a
