@@ -27,7 +27,7 @@ const faqs = [
 
 export default function FAQ() {
   return (
-    <div className="m-0 sm:w-full sm:px-4 sm:pt-8 mt-10" id="faqNCU">
+    <div className="m-0 sm:w-full sm:px-4 sm:pt-8 mt-10 " id="faqNCU">
       <div className="w-full p-4 transform duration-100 easy-in-out">
         <h1 className="text-left text-gray-200 pb-5 lg:text-9xl md:text-6xl text-4xl font-bold flex w-full justify-center" data-aos="fade-right">
           FAQs

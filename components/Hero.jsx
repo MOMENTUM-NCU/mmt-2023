@@ -94,12 +94,12 @@ export default function Hero() {
           <Image src={logo} alt="Not Loading"  height={150} width={150} className="lg:h-30" data-aos="zoom-in"/>
         </div>
       </div>
-      <div className="h-fit flex justify-center w-screen mt-20">
-        <video muted loop autoPlay className="h-full w-screen " data-aos="zoom-in">
+      <div className="h-fit flex justify-center w-full mt-20">
+        <video muted loop autoPlay className="h-full w-full " data-aos="zoom-in">
           <source src="/momentum23.webm" type="video/webm"/>
         </video>
       </div>
-      <div className="h-fit w-fit flex-col justify-center items-center mt-10" id="eventsNCU">
+      <div className="h-fit w-auto flex-col justify-center items-center mt-10" id="eventsNCU">
         <div className="mt-20 font-bold lg:text-9xl text-6xl  h-auto flex justify-center items-center" data-aos="fade-down">
           GLIMPSES
         </div>
@@ -183,8 +183,8 @@ export default function Hero() {
       {/* FAQ */}
       <FAQ/>
       {/* Footer */}
-      <div className="h-96 footer2023 flex items-center justify-center font-extrabold  tracking-tighter " data-aos="zoom-out">
-        <div data-aos="zoom-in " className="lg:text-7xl md:text-5xl text-4xl">
+      <div className="h-96 w-auto footer2023 flex items-center justify-center font-extrabold  tracking-tighter " data-aos="zoom-out">
+        <div data-aos="zoom-in " className="lg:text-7xl md:text-5xl text-3xl">
           Let the Magic Begin...
         </div>
       </div>

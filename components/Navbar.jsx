@@ -13,10 +13,10 @@ export default function Navbar() {
       itemName: "EVENTS",
       href: "/event",
     },
-    {
-      itemName: "SPONSORS",
-      href: "/#sponsorsNCU",
-    },
+    // {
+    //   itemName: "SPONSORS",
+    //   href: "/#sponsorsNCU",
+    // },
     {
       itemName: "FAQs",
       href: "/#faqNCU  ",
@@ -26,7 +26,7 @@ export default function Navbar() {
     <>
       <div className="z-20 navbar bg-transparent text-white fixed h-fit w-full" data-aos="fade-down">
         {/* <Link > */}
-          <a className="btn-ghost ml-5" href={"/"}>
+          <a className="btn-ghost ml-2  " href={"/"}>
             <Image height={65} width={65} src={logo} alt="Momentum_22_logo" className=""/>
           </a>
         {/* </Link> */}
