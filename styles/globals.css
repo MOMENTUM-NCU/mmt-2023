@@ -46,10 +46,10 @@ body{
   } */
 
   .bg-profile {
-    background-image: url("../public/profile_bg.jpeg");
-    background-size: cover;
+    background-image: url("../public/bg_profile.jpeg");
+    background-size:cover;
     background-repeat: no-repeat;
-    background-position: center;
+    background-position:bottom;
   }
 
   .bg-event {
@@ -135,10 +135,12 @@ canvas {
 /* ---- sticky navbar ----  */
 
 .sticky{
-  background-color: black;
-  height: 13vh;
+  background-color: rgba(255, 255, 255, 0.082);
+  backdrop-filter: blur(10px);
+  height: 5vh;
   position: fixed;
-  opacity: 0.1;
+  color: #fff
+  
 }
 
 /* ---- sponsor motion ---- */

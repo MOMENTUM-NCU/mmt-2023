@@ -168,7 +168,7 @@ export default function Hero() {
                 className="font-bold lg:text-4xl md:text-3xl"
                 data-aos="fade-down"
               >
-                DJ NIGHT
+                DJ Night
               </div>
               <div className="font-thin" data-aos="fade-down">
                 Get ready to dance the night away as our DJ spins the hottest
@@ -255,15 +255,10 @@ export default function Hero() {
             </div>
           </div>
         </div>
-        <div className=" mt-20 flex justify-center items-center">
-          <button
-            className="border-2 rounded-full flex justify-center items-center h-20 w-2/6 font-black lg:text-4xl md:text-3xl hover:bg-white"
-            data-aos="zoom-in"
-          >
-            <a href={"/event"} alt="">
+        <div className=" mt-20 flex justify-center items-center"  data-aos="zoom-in">
+        <Link href={"/event"} alt="" className="border-2 rounded-full flex justify-center items-center h-20 w-2/6 font-black lg:text-4xl md:text-3xl hover:text-black hover:bg-white">
               SEE ALL
-            </a>
-          </button>
+          </Link>
         </div>
       </div>
     </div>

@@ -3,6 +3,7 @@ import Spinner from "@/components/Spinner";
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import TeamName from "@/components/eventPageComp/TeamName";
+import Link from "next/link";
 
 const initializeRazorpay = () => {
   return new Promise((resolve) => {
@@ -111,14 +112,14 @@ export default function EventPage({ event }) {
       </div>
     );
     let buy = (
-      <button onClick={() => makePayment(eventId)} className="btn btn-primary">
+      <button onClick={() => makePayment(eventId)} className="bg-green-600 hover:bg-green-800 px-4 py-2 rounded-lg text-white">
         Buy Ticket
       </button>
     );
 
     let warnprofileupdate = (
-      <div className="alert alert-warning shadow-lg max-w-fit">
-        <div>
+      <div className="alert alert-warning shadow-lg max-w-fit rounded-lg">
+       
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="stroke-current flex-shrink-0 h-6 w-6"
@@ -133,7 +134,6 @@ export default function EventPage({ event }) {
             />
           </svg>
           <span>Update your profile to buy ticket</span>
-        </div>
       </div>
     );
 
@@ -153,9 +153,8 @@ export default function EventPage({ event }) {
 
       let view = (
         <>
-          <div className="">
-            <div className="alert alert-success shadow-lg min-w-fit">
-              <div>
+          <div>
+            <div className="bg-blue-400 flex px-4 py-2 rounded-lg text-white shadow-lg min-w-fit">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="stroke-current flex-shrink-0 h-6 w-6"
@@ -169,13 +168,13 @@ export default function EventPage({ event }) {
                     d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
                   />
                 </svg>
-                <span>Your purchase has been confirmed!</span>
-              </div>
+                <span className="mx-2">You have already Registered for this event!</span>
+              
             </div>
-            <a className=" px-4" href={event.whatsappLink}>
-              <div className="mt-5 alert alert-success shadow-lg">
+            <Link  href={event.whatsappLink}>
+              <div className="mt-5 rounded-xl flex bg-green-500 text-white px-6 py-4 shadow-lg">
                 <svg
-                  className=" fill-gray-800"
+                  className=" fill-white mr-2"
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
                   height="24"
@@ -185,8 +184,8 @@ export default function EventPage({ event }) {
                 </svg>
                 Click To Join Whatsapp group
               </div>
-            </a>
-          </div>
+            </Link>
+            </div>
         </>
       );
       const eventDetail = getEventById(eventId);
@@ -215,7 +214,8 @@ export default function EventPage({ event }) {
     getComp(event.id, event.isRegOpen).then(setComp);
   }, [event.id]);
   // const s3url = `https://momentum-poster-s3.s3.ap-south-1.amazonaws.com/poster/${event.id}.webp`;
-  const s3url = `https://picsum.photos/200`;
+  const bucketImageUrl = `https://momentum23-bukcet.blr1.digitaloceanspaces.com/poster/${event.id}.webp`
+  // const s3url = `https://picsum.photos/200`;
   const onstage_link =
     "https://drive.google.com/file/d/1PrH3qPp-KKA1LFGBdbtE0reQTZa7dL-Y/view?usp=sharing";
   const offstage_link =
@@ -268,7 +268,7 @@ export default function EventPage({ event }) {
         </div>
         <div className="md:w-1/4 w-full overflow-hidden rounded-md flex justify-center items-center mb-8 ">
           <Image
-            src={s3url}
+            src={bucketImageUrl}
             height={240}
             width={240}
             alt={event.id}
@@ -284,18 +284,18 @@ export default function EventPage({ event }) {
       </div>
       <div id="Rules" className="mb-6">
         <h1 className=" font-bold text-2xl text-white">Rules</h1>
-        <a
+        {/* <Link
           href={event.eventType == "ONSTAGE" ? onstage_link : offstage_link}
           rel="noreferrer"
           target="_blank"
         >
           <button
             type="button"
-            className=" focus:outline-none text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 my-2 mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900"
+            className=" focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 my-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-900"
           >
             Event Rulebook
           </button>
-        </a>
+        </Link> */}
         <ul className="list-disc">
           {rules.map((item) => (
             <li key={item}>{item}</li>

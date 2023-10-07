@@ -91,7 +91,7 @@ export default function Account({ user }) {
     getDetails().then(updateState);
   }, [user]);
   return <>
-    <div className="lg:w-4/12 bg-[#1f2937] rounded-lg p-8 flex flex-col w-full mt-10 md:mt-0 relative shadow-md">
+    <div className="lg:w-4/12 bg-slate-900 rounded-lg p-8 flex flex-col w-full mt-10 md:mt-0 relative shadow-md">
       <div className="flex items-center">
         <div className="avatar">
           <div className="w-24 rounded">
@@ -111,14 +111,14 @@ export default function Account({ user }) {
       <p className="mt-4 text-xl text-gray-100">{fname + " " + lname}</p>
       <p className="mt-4 text-xl text-gray-100">{user.email}</p>
       <div
-        className="justify-center px-4 py-2 cursor-pointer max-w-min mt-8 rounded-lg bg-gray-700 text-gray-300 hover:bg-gray-600"
+        className="justify-center px-4 py-2 cursor-pointer max-w-min mt-8 rounded-lg bg-red-500 text-white hover:bg-red-600"
         onClick={() => signOut()}
       >
         Logout
       </div>
     </div>
 
-    <div className="lg:w-7/12 bg-[#1f2937] rounded-lg p-8 flex flex-col w-full mt-10 md:mt-0 relative shadow-md">
+    <div className="lg:w-7/12 bg-slate-900 rounded-lg p-8 flex flex-col w-full mt-10 md:mt-0 relative shadow-md">
       <div className="">
         <form
           onSubmit={(e) => {
@@ -189,7 +189,7 @@ export default function Account({ user }) {
               </label>
               <select
                 id="gender"
-                className="border text-sm rounded-lg block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500"
+                className="border text-sm rounded-lg block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-green-500 focus:border-green-500"
                 value={gender}
                 required={true}
                 onChange={(e) => {
@@ -224,7 +224,7 @@ export default function Account({ user }) {
                 <input
                   datepicker=""
                   type="date"
-                  className="border sm:text-sm rounded-lg block w-full pl-10 p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500 datepicker-input"
+                  className="border sm:text-sm rounded-lg block w-full pl-10 p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-green-500 focus:border-green-500 datepicker-input"
                   placeholder="Select date"
                   value={dob}
                   onChange={(e) => setDob(e.target.value)}
@@ -239,7 +239,7 @@ export default function Account({ user }) {
               </label>
               <select
                 id="gender"
-                className=" border text-sm rounded-lg block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500"
+                className=" border text-sm rounded-lg block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-green-500 focus:border-green-500"
                 value={yearOfStudy}
                 onChange={(e) => setYearOfStudy(e.target.value)}
               >
@@ -273,7 +273,7 @@ export default function Account({ user }) {
                     }, 250);
                   }
                 }
-                className="border text-sm rounded-lg block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500"
+                className="border text-sm rounded-lg block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-green-500 focus:border-green-500"
               />
               <div className="z-10 w-auto absolute rounded divide-y divide-gray-100 shadow bg-gray-700">
                 {showSuggestion && (
@@ -297,14 +297,14 @@ export default function Account({ user }) {
             <textarea
               id="message"
               rows="4"
-              className="z-10 block p-2.5 w-full text-sm rounded-lg border bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500"
+              className="z-10 block p-2.5 w-full text-sm rounded-lg border bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-green-500 focus:border-green-500"
               placeholder="Address"
               value={address}
               onChange={(e) => setAddress(e.target.value)}
             ></textarea>
           </div>
 
-          <button className="text-whitefocus:ring-4 focus:outline-none font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center bg-blue-600 hover:bg-blue-700 focus:ring-blue-800">
+          <button className="text-whitefocus:ring-4 focus:outline-none font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center bg-green-600 hover:bg-green-700 focus:ring-green-800">
             {profileUpdating ? <Spinner /> : "Update Profile"}
           </button>
         </form>

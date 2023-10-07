@@ -36,7 +36,7 @@ export default function FAQ() {
         <div className="h-full w-fit  flex flex-col justify-evenly items-center mx-auto container">
           {faqs.map((faq, idx) => {
             return (
-              <>
+           
                 <div tabIndex={0} key={idx} className="mt-2 w-full max-w-4xl collapse border-[3px] rounded-[32px] border-[#ffffff]" data-aos="fade-down">
                 <div className="collapse-title text-gray-200 text-2xl font-semibold ">
                   {faq.ques}
@@ -48,7 +48,7 @@ export default function FAQ() {
                     </p>
                 </div>
               </div>
-              </>
+              
             );
           })}
         </div>
