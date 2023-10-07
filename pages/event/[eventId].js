@@ -49,7 +49,7 @@ const makePayment = async (eventId) => {
   const data = await response.json();
   var options = {
     key: process.env.RPAY_KEY,
-    name: "Momentum 2022",
+    name: "Momentum 2023",
     currency: data.currency,
     amount: data.amount,
     order_id: data.id,
@@ -267,7 +267,15 @@ export default function EventPage({ event }) {
           </p>
         </div>
         <div className="md:w-1/4 w-full overflow-hidden rounded-md flex justify-center items-center mb-8 ">
-          <Image src={s3url} height={240} width={240} alt={event.id} />
+          <Image
+            src={s3url}
+            height={240}
+            width={240}
+            alt={event.id}
+            style={{
+              maxWidth: "100%",
+              height: "auto"
+            }} />
         </div>
       </div>
       <div id="Description" className=" mb-6">

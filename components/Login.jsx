@@ -30,6 +30,26 @@ export default function Login() {
   if (session) {
     let user = session.user;
     return (
+      // <Link href={"/profile"}>
+      //   <a className="flex ">
+      //     <div className="grid place-items-center w-8 h-8 rounded-full border-white  border-2 shadow-xl">
+      //       <div className="rounded-full bg-cover">
+      //         <div className="h-7 w-7 relative">
+      //           <Image
+      //             src={user.image}
+      //             alt="user image"
+      //             layout="fill" // required
+      //             objectFit="cover" // change to suit your needs
+      //             className="rounded-full" // just an example
+      //           />
+      //         </div>
+      //       </div>
+      //     </div>
+      //     <p className="ml-2 flex items-center nav-link-text text-base">
+      //       {user.name}
+      //     </p>
+      //   </a>
+      // </Link>
       <div className="dropdown dropdown-end mr-5">
         <label
           tabIndex={0}
@@ -39,7 +59,15 @@ export default function Login() {
             <span className="indicator-item badge badge-warning">!</span>
           )}
           <div className="w-10 rounded-full">
-            <Image src={user.image} width={80} height={80} alt="PP" />
+            <Image
+              src={user.image}
+              width={80}
+              height={80}
+              alt="PP"
+              style={{
+                maxWidth: "100%",
+                height: "auto"
+              }} />
           </div>
         </label>
         <ul
@@ -72,26 +100,6 @@ export default function Login() {
           </li>
         </ul>
       </div>
-      // <Link href={"/profile"}>
-      //   <a className="flex ">
-      //     <div className="grid place-items-center w-8 h-8 rounded-full border-white  border-2 shadow-xl">
-      //       <div className="rounded-full bg-cover">
-      //         <div className="h-7 w-7 relative">
-      //           <Image
-      //             src={user.image}
-      //             alt="user image"
-      //             layout="fill" // required
-      //             objectFit="cover" // change to suit your needs
-      //             className="rounded-full" // just an example
-      //           />
-      //         </div>
-      //       </div>
-      //     </div>
-      //     <p className="ml-2 flex items-center nav-link-text text-base">
-      //       {user.name}
-      //     </p>
-      //   </a>
-      // </Link>
     );
   } else {
     // login button

@@ -42,7 +42,7 @@ export default function Profile({ session, email, events, eventsData, qrUrl }) {
                   Show code at entry
                 </h1>
                 <div className="h-64 w-64 relative mx-auto">
-                  <Image src={qrUrl} layout="fill" alt="USER_QR_CODE"></Image>
+                  <Image src={qrUrl} alt="USER_QR_CODE" fill sizes="100vw"></Image>
                 </div>
                 <h1 className="mt-4 p-5 text-lg text-center text-white break-all">
                   {email}
