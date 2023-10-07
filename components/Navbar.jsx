@@ -9,10 +9,10 @@ export default function Navbar() {
       itemName: "About",
       href: "/#aboutNCU",
     },
-    {
-      itemName: "Events",
-      href: "/event",
-    },
+    // {
+    //   itemName: "Events",
+    //   href: "/event",
+    // },
     {
       itemName: "Sponsors",
       href: "/#sponsorsNCU",
@@ -54,7 +54,7 @@ export default function Navbar() {
         </ul>
       </div>
       <div className="justify-end pr-2 sm:pr-20 rounded-md">
-        <Login />
+        {/* <Login /> */}
       </div>
     </div>
   </>;

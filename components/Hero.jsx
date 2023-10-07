@@ -157,7 +157,7 @@ export default function Hero() {
           >
             <video
               src="/123.mp4"
-              autoPlay
+             
               loop
               muted
               className="w-fit"
@@ -182,7 +182,7 @@ export default function Hero() {
           >
             <video
               src="/video2.mp4"
-              autoPlay
+              
               loop
               muted
               className="w-fit"
@@ -209,7 +209,7 @@ export default function Hero() {
           >
             <video
               src="/124-1.mp4"
-              autoPlay
+            
               loop
               muted
               className="w-fit"
@@ -235,7 +235,6 @@ export default function Hero() {
           >
             <video
               src="/video1.mp4"
-              autoPlay
               loop
               muted
               className="w-fit"
