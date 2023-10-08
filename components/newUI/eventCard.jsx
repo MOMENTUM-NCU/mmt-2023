@@ -3,15 +3,22 @@ import Image from "next/image";
 export default function EventCard(e) {
   const event = e.event;
   //const s3url = `https://momentum-poster-s3.s3.ap-south-1.amazonaws.com/poster/${event.id}.webp`;
- 
-  const bucketImageUrl = `https://momentum23-bukcet.blr1.cdn.digitaloceanspaces.com/poster/${event.id}.webp`
+
+  const bucketImageUrl = `https://momentum23-bukcet.blr1.cdn.digitaloceanspaces.com/poster/${event.id}.webp`;
   const s3url = `https://picsum.photos/200`;
   return (
     <a href={`./event/${event.id}`}>
       <div>
         <div className="relative h-60 w-60 bg-transparent cursor-pointer group drop-shadow-lg rounded-md overflow-hidden shadow-sm">
           <div className=" absolute w-full h-full overflow-clip hover:backdrop-blur-sm">
-            <Image src={bucketImageUrl} alt="event_poster" fill sizes="100vw" />
+            <Image
+              src={bucketImageUrl}
+              alt="event_poster"
+              fill
+              quality={40}
+              // loader={true}
+              // loading="lazy"
+            />
           </div>
           <div className="absolute opacity-0 hover:opacity-100  w-full h-full flex justify-center items-center flex-col hover:backdrop-blur-md hover:backdrop-brightness-75 duration-150">
             <h1 className=" text-3xl text-white font-bold text-center ">

@@ -22,7 +22,7 @@ jobs:
       uses: wlixcc/SFTP-Deploy-Action@v1.2.4
       with:
             username: 'root'
-            server: '143.110.254.185'
+            server: '174.138.120.173'
             ssh_private_key: ${{ secrets.SSH_STAGING_KEY }} 
             local_path: './dimg/*'
             remote_path: '/root/service/dimg'
@@ -31,7 +31,7 @@ jobs:
     - name: Deploy on Node 01
       uses: appleboy/ssh-action@master
       with:
-        host: '143.110.254.185'
+        host: '174.138.120.173'
         username: 'root'
         key: ${{ secrets.SSH_STAGING_KEY }}
         port: '22'
