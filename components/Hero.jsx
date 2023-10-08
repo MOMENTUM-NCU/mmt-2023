@@ -119,8 +119,8 @@ export default function Hero() {
           <Image
             src={logo}
             alt="Not Loading"
-            height={150}
-            width={150}
+            height={250}
+            width={250}
             className="lg:h-30"
             data-aos="zoom-in"
             style={{
@@ -157,7 +157,13 @@ export default function Hero() {
               className="h-4/5 w-2/5 flex-col  justify-evenly hover:border cursor-pointer"
               data-aos="fade-right"
             >
-              <video src="/123.mp4" loop muted className="w-fit"></video>
+              <video
+                src="/123.mp4"
+                autoPlay
+                loop
+                muted
+                className="w-fit"
+              ></video>
               <div className=" w-full mt-8 lg:ml-4 ">
                 {/* <div className="font-semibold text-3xl" data-aos="fade-down">Night Event</div> */}
                 <div
@@ -176,7 +182,13 @@ export default function Hero() {
               className="h-4/5 w-2/5  flex-col justify-center hover:border cursor-pointer"
               data-aos="fade-left"
             >
-              <video src="/video2.mp4" loop muted className="w-fit"></video>
+              <video
+                src="/video2.mp4"
+                autoPlay
+                loop
+                muted
+                className="w-fit"
+              ></video>
               <div className=" w-full mt-8 lg:ml-4 ">
                 {/* <div className="font-semibold text-3xl" data-aos="fade-down">Night Event</div> */}
                 <div
@@ -197,7 +209,13 @@ export default function Hero() {
               className="h-4/5 w-2/5  flex-col  justify-center hover:border cursor-pointer"
               data-aos="fade-right"
             >
-              <video src="/124-1.mp4" loop muted className="w-fit"></video>
+              <video
+                src="/124-1.mp4"
+                autoPlay
+                loop
+                muted
+                className="w-fit"
+              ></video>
               <div className="  w-full mt-8 lg:ml-4 ">
                 {/* <div className="font-semibold text-3xl" data-aos="fade-down">Night Event</div> */}
                 <div
@@ -217,7 +235,13 @@ export default function Hero() {
               className="h-4/5 w-2/5  flex-col justify-center hover:border cursor-pointer"
               data-aos="fade-left"
             >
-              <video src="/video1.mp4" loop muted className="w-fit"></video>
+              <video
+                src="/video1.mp4"
+                autoPlay
+                loop
+                muted
+                className="w-fit"
+              ></video>
               <div className=" w-full mt-8 lg:ml-4 ">
                 {/* <div className="font-semibold text-3xl" data-aos="fade-down">Night Event</div> */}
                 <div

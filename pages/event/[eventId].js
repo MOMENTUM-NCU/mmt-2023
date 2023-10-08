@@ -92,13 +92,13 @@ export default function EventPage({ event }) {
   const getComp = async (eventId, isRegOpen) => {
     const response = await fetch(`/api/user/ticket/event/${eventId}`);
     let login = (
-      <div className="alert max-w-fit">
+      <div className="max-w-fit flex rounded-lg bg-yellow-300 text-black px-4 py-2">
         <div>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
-            className="stroke-current flex-shrink-0 w-6 h-6"
+            className="stroke-current flex-shrink-0 w-6 h-6 text-black"
           >
             <path
               strokeLinecap="round"
@@ -107,8 +107,8 @@ export default function EventPage({ event }) {
               d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
             ></path>
           </svg>
-          <span>Login to register in {event.name}</span>
         </div>
+        <span>Login to register in {event.name}</span>
       </div>
     );
     let buy = (

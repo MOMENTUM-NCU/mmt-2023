@@ -14,8 +14,8 @@ export default function Navbar() {
       href: "/event",
     },
     {
-      itemName: "Sponsors",
-      href: "/#sponsorsNCU",
+      itemName: "Sponsor Us",
+      href: "https://drive.google.com/file/d/1zqFUrDrDlgDymamZlDVQm0J-6rzkiiFE/view?usp=sharing",
     },
     {
       itemName: "FAQs",

@@ -13,7 +13,7 @@ export default function Account({ events, email, eventsData }) {
         <td>{event.amount}</td>
         <td>
           <Link href={eventLink}>
-            <span className="link link-accent">View</span>
+            <span className="text-white hover:text-gray-300">View</span>
           </Link>
         </td>
       </tr>
