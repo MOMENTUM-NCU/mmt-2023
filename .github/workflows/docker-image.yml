@@ -5,30 +5,9 @@ on:
     branches: [ "main" ]
     
 jobs:
-
-  # build-staging:
-  
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #   - uses: actions/checkout@v3
-  #   - name: Build Docker Image 
-  #     run: docker build . --file Dockerfile --tag my-nextjs-docker
-  #   - name: Export Docker Image
-  #     run : |
-  #           mkdir dimg
-  #           docker save -o ./dimg/my-nextjs-docker-$(date +%s).tar my-nextjs-docker:latest
-  #   - name: Send Image To Server
-  #     uses: wlixcc/SFTP-Deploy-Action@v1.2.4
-  #     with:
-  #           username: 'ubuntu'
-  #           server: 'mmt.pushpendersaini.com'
-  #           ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }} 
-  #           local_path: './dimg/*'
-  #           remote_path: '/home/ubuntu/dimg'
-  #           sftpArgs: '-o ConnectTimeout=5'
             
   build-prod:
-  
+
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
@@ -44,9 +23,9 @@ jobs:
       with:
             username: 'root'
             server: 'momentum.ncuindia.edu'
-            ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY_PROD }} 
+            ssh_private_key: ${{ secrets.SSH_STAGING_KEY }} 
             local_path: './dimg/*'
-            remote_path: '/home/ubuntu/dimg'
+            remote_path: '/root/service/dimg'
             sftpArgs: '-o ConnectTimeout=5'
              
     - name: Deploy on Node 01
@@ -54,35 +33,68 @@ jobs:
       with:
         host: 'momentum.ncuindia.edu'
         username: 'root'
-        key: ${{ secrets.SSH_PRIVATE_KEY_PROD }}
+        key: ${{ secrets.SSH_STAGING_KEY }}
         port: '22'
         script: |
-                sudo docker load -i /home/ubuntu/dimg/$(ls -t /home/ubuntu/dimg | head -1)
-                cd /home/ubuntu/services/nextapp/
+                sudo docker load -i /root/service/dimg/$(ls -t /root/service/dimg | head -1)
+                cd /root/service/nextapp/
                 sudo docker compose down
                 sudo docker compose up -d
+  
+    # runs-on: ubuntu-latest
+    # steps:
+    # - uses: actions/checkout@v3
+    # - name: Build Docker Image 
+    #   run: docker build . --file Dockerfile --tag my-nextjs-docker
+    # - name: Export Docker Image
+    #   run : |
+    #         mkdir dimg
+    #         docker save -o ./dimg/my-nextjs-docker-$(date +%s).tar my-nextjs-docker:latest
             
-    - name: Send Image To Node 02
-      uses: wlixcc/SFTP-Deploy-Action@v1.2.4
-      with:
-            username: 'root'
-            server: '206.189.143.112'
-            ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY_PROD }} 
-            local_path: './dimg/*'
-            remote_path: '/home/ubuntu/dimg'
-            sftpArgs: '-o ConnectTimeout=5'
+    # - name: Send Image To Node 01
+    #   uses: wlixcc/SFTP-Deploy-Action@v1.2.4
+    #   with:
+    #         username: 'root'
+    #         server: 'momentum.ncuindia.edu'
+    #         ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY_PROD }} 
+    #         local_path: './dimg/*'
+    #         remote_path: '/home/ubuntu/dimg'
+    #         sftpArgs: '-o ConnectTimeout=5'
+             
+    # - name: Deploy on Node 01
+    #   uses: appleboy/ssh-action@master
+    #   with:
+    #     host: 'momentum.ncuindia.edu'
+    #     username: 'root'
+    #     key: ${{ secrets.SSH_PRIVATE_KEY_PROD }}
+    #     port: '22'
+    #     script: |
+    #             sudo docker load -i /home/ubuntu/dimg/$(ls -t /home/ubuntu/dimg | head -1)
+    #             cd /home/ubuntu/services/nextapp/
+    #             sudo docker compose down
+    #             sudo docker compose up -d
             
-    - name: Deploy on Node 02
-      uses: appleboy/ssh-action@master
-      with:
-        host: '206.189.143.112'
-        username: 'root'
-        key: ${{ secrets.SSH_PRIVATE_KEY_PROD }}
-        port: '22'
-        script: |
-                sudo docker load -i /home/ubuntu/dimg/$(ls -t /home/ubuntu/dimg | head -1)
-                cd /home/ubuntu/services/nextapp/
-                sudo docker compose down
-                sudo docker compose up -d
+    # - name: Send Image To Node 02
+    #   uses: wlixcc/SFTP-Deploy-Action@v1.2.4
+    #   with:
+    #         username: 'root'
+    #         server: '206.189.143.112'
+    #         ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY_PROD }} 
+    #         local_path: './dimg/*'
+    #         remote_path: '/home/ubuntu/dimg'
+    #         sftpArgs: '-o ConnectTimeout=5'
+            
+    # - name: Deploy on Node 02
+    #   uses: appleboy/ssh-action@master
+    #   with:
+    #     host: '206.189.143.112'
+    #     username: 'root'
+    #     key: ${{ secrets.SSH_PRIVATE_KEY_PROD }}
+    #     port: '22'
+    #     script: |
+    #             sudo docker load -i /home/ubuntu/dimg/$(ls -t /home/ubuntu/dimg | head -1)
+    #             cd /home/ubuntu/services/nextapp/
+    #             sudo docker compose down
+    #             sudo docker compose up -d
                 
     
