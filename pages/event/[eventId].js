@@ -112,28 +112,30 @@ export default function EventPage({ event }) {
       </div>
     );
     let buy = (
-      <button onClick={() => makePayment(eventId)} className="bg-green-600 hover:bg-green-800 px-4 py-2 rounded-lg text-white">
+      <button
+        onClick={() => makePayment(eventId)}
+        className="bg-green-600 hover:bg-green-800 px-4 py-2 rounded-lg text-white"
+      >
         Buy Ticket
       </button>
     );
 
     let warnprofileupdate = (
       <div className="alert alert-warning shadow-lg max-w-fit rounded-lg">
-       
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="stroke-current flex-shrink-0 h-6 w-6"
-            fill="none"
-            viewBox="0 0 24 24"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
-            />
-          </svg>
-          <span>Update your profile to buy ticket</span>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="stroke-current flex-shrink-0 h-6 w-6"
+          fill="none"
+          viewBox="0 0 24 24"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
+            d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
+          />
+        </svg>
+        <span>Update your profile to buy ticket</span>
       </div>
     );
 
@@ -155,23 +157,24 @@ export default function EventPage({ event }) {
         <>
           <div>
             <div className="bg-blue-400 flex px-4 py-2 rounded-lg text-white shadow-lg min-w-fit">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="stroke-current flex-shrink-0 h-6 w-6"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                  />
-                </svg>
-                <span className="mx-2">You have already Registered for this event!</span>
-              
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="stroke-current flex-shrink-0 h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                />
+              </svg>
+              <span className="mx-2">
+                You have already Registered for this event!
+              </span>
             </div>
-            <Link  href={event.whatsappLink}>
+            <Link href={event.whatsappLink}>
               <div className="mt-5 rounded-xl flex bg-green-500 text-white px-6 py-4 shadow-lg">
                 <svg
                   className=" fill-white mr-2"
@@ -185,7 +188,7 @@ export default function EventPage({ event }) {
                 Click To Join Whatsapp group
               </div>
             </Link>
-            </div>
+          </div>
         </>
       );
       const eventDetail = getEventById(eventId);
@@ -214,7 +217,7 @@ export default function EventPage({ event }) {
     getComp(event.id, event.isRegOpen).then(setComp);
   }, [event.id]);
   // const s3url = `https://momentum-poster-s3.s3.ap-south-1.amazonaws.com/poster/${event.id}.webp`;
-  const bucketImageUrl = `https://momentum23-bukcet.blr1.digitaloceanspaces.com/poster/${event.id}.webp`
+  const bucketImageUrl = `https://momentum23-bukcet.blr1.digitaloceanspaces.com/poster/${event.id}.webp`;
   // const s3url = `https://picsum.photos/200`;
   const onstage_link =
     "https://drive.google.com/file/d/1PrH3qPp-KKA1LFGBdbtE0reQTZa7dL-Y/view?usp=sharing";
@@ -240,7 +243,7 @@ export default function EventPage({ event }) {
           <p>
             Date:{" "}
             <span className=" text-white font-thin">
-              {event.date ? event.date : "4 - 5 November, 2022"}
+              {event.date ? event.date : "3 - 4 November, 2023"}
             </span>
           </p>
           <p>
@@ -248,7 +251,7 @@ export default function EventPage({ event }) {
             <span className=" text-white font-thin">
               {event.venue
                 ? event.venue
-                : "The Northcap University, Sector 23-A, Gurgaon"}
+                : "The NorthCap University, Sector 23-A, Gurgaon"}
             </span>
           </p>
           <p>
@@ -274,8 +277,9 @@ export default function EventPage({ event }) {
             alt={event.id}
             style={{
               maxWidth: "100%",
-              height: "auto"
-            }} />
+              height: "auto",
+            }}
+          />
         </div>
       </div>
       <div id="Description" className=" mb-6">
