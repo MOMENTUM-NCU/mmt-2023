@@ -6,26 +6,26 @@ on:
     
 jobs:
 
-  build-staging:
+  # build-staging:
   
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v3
-    - name: Build Docker Image 
-      run: docker build . --file Dockerfile --tag my-nextjs-docker
-    - name: Export Docker Image
-      run : |
-            mkdir dimg
-            docker save -o ./dimg/my-nextjs-docker-$(date +%s).tar my-nextjs-docker:latest
-    - name: Send Image To Server
-      uses: wlixcc/SFTP-Deploy-Action@v1.2.4
-      with:
-            username: 'ubuntu'
-            server: 'mmt.pushpendersaini.com'
-            ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }} 
-            local_path: './dimg/*'
-            remote_path: '/home/ubuntu/dimg'
-            sftpArgs: '-o ConnectTimeout=5'
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #   - uses: actions/checkout@v3
+  #   - name: Build Docker Image 
+  #     run: docker build . --file Dockerfile --tag my-nextjs-docker
+  #   - name: Export Docker Image
+  #     run : |
+  #           mkdir dimg
+  #           docker save -o ./dimg/my-nextjs-docker-$(date +%s).tar my-nextjs-docker:latest
+  #   - name: Send Image To Server
+  #     uses: wlixcc/SFTP-Deploy-Action@v1.2.4
+  #     with:
+  #           username: 'ubuntu'
+  #           server: 'mmt.pushpendersaini.com'
+  #           ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }} 
+  #           local_path: './dimg/*'
+  #           remote_path: '/home/ubuntu/dimg'
+  #           sftpArgs: '-o ConnectTimeout=5'
             
   build-prod:
   
@@ -42,7 +42,7 @@ jobs:
     - name: Send Image To Node 01
       uses: wlixcc/SFTP-Deploy-Action@v1.2.4
       with:
-            username: 'ubuntu'
+            username: 'root'
             server: 'momentum.ncuindia.edu'
             ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY_PROD }} 
             local_path: './dimg/*'
@@ -53,7 +53,7 @@ jobs:
       uses: appleboy/ssh-action@master
       with:
         host: 'momentum.ncuindia.edu'
-        username: 'ubuntu'
+        username: 'root'
         key: ${{ secrets.SSH_PRIVATE_KEY_PROD }}
         port: '22'
         script: |
@@ -65,7 +65,7 @@ jobs:
     - name: Send Image To Node 02
       uses: wlixcc/SFTP-Deploy-Action@v1.2.4
       with:
-            username: 'ubuntu'
+            username: 'root'
             server: '206.189.143.112'
             ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY_PROD }} 
             local_path: './dimg/*'
@@ -76,7 +76,7 @@ jobs:
       uses: appleboy/ssh-action@master
       with:
         host: '206.189.143.112'
-        username: 'ubuntu'
+        username: 'root'
         key: ${{ secrets.SSH_PRIVATE_KEY_PROD }}
         port: '22'
         script: |
