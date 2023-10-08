@@ -1,0 +1,42 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ "dev" ]
+
+jobs:
+
+  build-staging:
+  
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Build Docker Image 
+      run: docker build . --file Dockerfile --tag my-nextjs-docker
+    - name: Export Docker Image
+      run : |
+            mkdir dimg
+            docker save -o ./dimg/my-nextjs-docker-$(date +%s).tar my-nextjs-docker:latest
+            
+    - name: Send Image To Node 01
+      uses: wlixcc/SFTP-Deploy-Action@v1.2.4
+      with:
+            username: 'root'
+            server: '143.110.254.185'
+            ssh_private_key: ${{ secrets.SSH_STAGING_KEY }} 
+            local_path: './dimg/*'
+            remote_path: '/root/service/dimg'
+            sftpArgs: '-o ConnectTimeout=5'
+             
+    - name: Deploy on Node 01
+      uses: appleboy/ssh-action@master
+      with:
+        host: '143.110.254.185'
+        username: 'root'
+        key: ${{ secrets.SSH_STAGING_KEY }}
+        port: '22'
+        script: |
+                sudo docker load -i /root/service/dimg/$(ls -t /root/service/dimg | head -1)
+                cd /root/service/nextapp/
+                sudo docker compose down
+                sudo docker compose up -d

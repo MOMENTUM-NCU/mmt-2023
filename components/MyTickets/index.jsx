@@ -13,7 +13,7 @@ export default function Account({ events, email, eventsData }) {
         <td>{event.amount}</td>
         <td>
           <Link href={eventLink}>
-            <a className="link link-accent">View</a>
+            <span className="link link-accent">View</span>
           </Link>
         </td>
       </tr>

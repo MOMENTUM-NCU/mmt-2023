@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 export default function EventCard({ event }) {
   console.log(event);
   return (
@@ -14,15 +15,15 @@ export default function EventCard({ event }) {
     // </div>
 
     <div className="bg-white shadow-md border border-gray-200 rounded-lg max-w-sm dark:bg-gray-800 dark:border-gray-700">
-      <a href="#">
+      <Link href="#">
         {/* <Image className="rounded-t-lg" src={event.img} alt="" layout="fill" /> */}
-      </a>
+      </Link>
       <div className="p-5">
-        <a href="#">
+        <Link href="#">
           <h5 className="text-gray-900 font-bold text-2xl tracking-tight mb-2 dark:text-white">
             {event.title}
           </h5>
-        </a>
+        </Link>
         <p className="font-normal text-gray-700 mb-3 dark:text-gray-400">
           {event.desc}
         </p>

@@ -30,56 +30,6 @@ export default function Login() {
   if (session) {
     let user = session.user;
     return (
-      <div className="dropdown dropdown-end mr-5">
-        <label
-          tabIndex={0}
-          className="btn btn-ghost btn-circle avatar indicator"
-        >
-          {isProfileNeedUpdate && (
-            <span className="indicator-item badge badge-warning">!</span>
-          )}
-          <div className="w-10 rounded-full">
-            <Image src={user.image} width={80} height={80} alt="PP" />
-          </div>
-        </label>
-        <ul
-          tabIndex={0}
-          className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-[#2a303c] rounded-box w-52"
-        >
-          <li>
-            <Link href={"/profile"}>
-              <a className="justify-between">
-                Profile
-                {isProfileNeedUpdate && (
-                  <span className="badge badge-warning">Update</span>
-                )}
-              </a>
-            </Link>
-          </li>
-          <li>
-            <Link href={"/tickets"}>
-              <a>My Tickets</a>
-            </Link>
-          </li>
-          <li>
-            <Link href={"/myqr"}>
-              <a>Entry QR Code</a>
-            </Link>
-          </li>
-          <li>
-            <a
-              className="bg-error text-black"
-              onClick={() =>
-                signOut({
-                  callbackUrl: `${window.location.origin}`,
-                })
-              }
-            >
-              Logout
-            </a>
-          </li>
-        </ul>
-      </div>
       // <Link href={"/profile"}>
       //   <a className="flex ">
       //     <div className="grid place-items-center w-8 h-8 rounded-full border-white  border-2 shadow-xl">
@@ -100,13 +50,63 @@ export default function Login() {
       //     </p>
       //   </a>
       // </Link>
+      <div className="dropdown dropdown-end mr-5">
+        <label
+          tabIndex={0}
+          className="avatar indicator"
+        >
+          {isProfileNeedUpdate && (
+            <span className="indicator-item badge badge-warning rounded-full">!</span>
+          )}
+          <div className="w-10 rounded-full">
+            <Image
+              src={user.image}
+              width={80}
+              height={80}
+              alt="PP"
+              style={{
+                maxWidth: "100%",
+                height: "auto"
+              }} />
+          </div>
+        </label>
+        <ul
+          tabIndex={0}
+          className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-[#2a303c] w-52 rounded-lg"
+        >
+          <li>
+            <Link href={"/profile"} className="justify-between">
+              Profile
+              {isProfileNeedUpdate && (
+                <span className="badge badge-warning rounded-full">Update</span>
+              )}
+            </Link>
+          </li>
+          <li>
+            <Link href={"/tickets"}>My Tickets</Link>
+          </li>
+          {/* <li>
+            <Link href={"/myqr"}>Entry QR Code</Link>
+          </li> */}
+          <li
+            className="bg-error text-white rounded-lg py-2 px-4 hover:bg-red-700 hover:cursor-pointer"
+            onClick={() =>
+              signOut({
+                callbackUrl: `${window.location.origin}`,
+              })
+            }
+          >
+            Logout
+          </li>
+        </ul>
+      </div>
     );
   } else {
     // login button
     return (
-      <div className="btn btn-success" onClick={() => signIn("google")}>
+      <button className="bg-green-600 rounded-lg py-2 px-4" onClick={() => signIn("google")}>
         Login
-      </div>
+      </button>
     );
   }
 }

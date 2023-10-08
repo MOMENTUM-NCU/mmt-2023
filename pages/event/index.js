@@ -1,5 +1,4 @@
 import { getEvents } from "lib/eventList";
-import Link from "next/link";
 import EventCard from "@/components/newUI/eventCard";
 import PageWrapper from "@/components/PageWrapper";
 import { useRef, useState } from "react";
@@ -26,7 +25,7 @@ export default function Events({ events }) {
     "Literary",
   ];
   return (
-    <div className="h-full min-h-screen py-[80px] bg-[#2a303c]">
+    <div className="h-full min-h-screen py-[80px] bg-[#1a1a1a]">
       <div className="sm:hidden block px-8 py-8">
         <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">
           Event Categories
@@ -63,7 +62,7 @@ export default function Events({ events }) {
               All
             </a>
             {categories.map((item) => (
-              <a
+              <span
                 key={item}
                 className=" cursor-pointer hover:text-white"
                 onClick={() => {
@@ -72,7 +71,7 @@ export default function Events({ events }) {
                 }}
               >
                 {item}
-              </a>
+              </span>
             ))}
           </div>
         </div>
@@ -110,7 +109,7 @@ export default function Events({ events }) {
                 />
                 <button
                   type="submit"
-                  className="text-white absolute right-2.5 bottom-2.5 bg-purple-600 hover:bg-purple-800 font-medium rounded-lg text-sm px-3 py-1 "
+                  className="text-white absolute right-2.5 bottom-2.5 bg-green-600 hover:bg-green-800 font-medium rounded-lg text-sm px-3 py-1 "
                 >
                   Search
                 </button>
@@ -137,12 +136,12 @@ export default function Events({ events }) {
                 }
               })
               .map((e) => {
-                const eventUrl = "/event/" + e.id;
-                return (
-                  <div key={e.id}>
-                    <EventCard event={e} />
-                  </div>
-                );
+               // const eventUrl = "/event/" + e.id;
+                  return (
+                    <div key={e.id}>
+                      <EventCard event={e} />
+                    </div>
+                  );
               })}
           </div>
         </div>

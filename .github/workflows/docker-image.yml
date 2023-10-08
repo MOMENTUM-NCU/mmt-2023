@@ -66,7 +66,7 @@ jobs:
       uses: wlixcc/SFTP-Deploy-Action@v1.2.4
       with:
             username: 'ubuntu'
-            server: '13.234.116.8'
+            server: '206.189.143.112'
             ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY_PROD }} 
             local_path: './dimg/*'
             remote_path: '/home/ubuntu/dimg'
@@ -75,7 +75,7 @@ jobs:
     - name: Deploy on Node 02
       uses: appleboy/ssh-action@master
       with:
-        host: '13.234.116.8'
+        host: '206.189.143.112'
         username: 'ubuntu'
         key: ${{ secrets.SSH_PRIVATE_KEY_PROD }}
         port: '22'

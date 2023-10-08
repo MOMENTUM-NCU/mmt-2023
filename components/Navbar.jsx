@@ -1,36 +1,61 @@
-import logo from "../public/M_logo_white.png";
+import logo from "../public/Logo-03.png";
 import Login from "./Login";
 import Link from "next/link";
 import Image from "next/image";
 
 export default function Navbar() {
-  return (
-    <>
-      <div className="z-20 navbar bg-[#1f242d] text-gray-100 fixed sm:pl-20">
-        <Link href={"/"}>
-          <a className="btn btn-ghost">
-            <Image height={45} width={45} src={logo} alt="Momentum_22_logo" />
-          </a>
-        </Link>
+  const navItems = [
+    {
+      itemName: "About",
+      href: "/#aboutNCU",
+    },
+    // {
+    //   itemName: "Events",
+    //   href: "/event",
+    // },
+    {
+      itemName: "Sponsors",
+      href: "/#sponsorsNCU",
+    },
+    {
+      itemName: "FAQs",
+      href: "/#faqNCU  ",
+    },
+  ];
+  return <>
+    <div className="z-20 navbar  text-white fixed sm:pl-20">
+      <Link href={"/"}>
+        <div className="hover:cursor-pointer">
+          <Image
+            height={45}
+            width={45}
+            src={logo}
+            alt="Momentum_22_logo"
+            style={{
+              maxWidth: "100%",
+              height: "auto"
+            }} />
+        </div>
+      </Link>
 
-        <div className="navbar-center flex mx-auto">
-          <ul className="menu menu-horizontal p-0">
-            <li>
-              <Link href={"/event"}>
-                <a>Events</a>
-              </Link>
-            </li>
-            <li>
-              <Link href={"/faq"}>
-                <a>FAQs</a>
-              </Link>
-            </li>
-          </ul>
-        </div>
-        <div className="justify-end pr-2 sm:pr-20">
-          <Login />
-        </div>
+      <div className=" mx-auto">
+        <ul className="menu menu-horizontal p-0">
+          {navItems.map((navItem,key)=>{
+            return(
+              <li key={key} >
+            <Link href={navItem.href} className="font-semibold">
+              {navItem.itemName}
+            </Link>
+          </li>
+            )
+          })}
+          
+          
+        </ul>
       </div>
-    </>
-  );
+      <div className="justify-end pr-2 sm:pr-20 rounded-md">
+        {/* <Login /> */}
+      </div>
+    </div>
+  </>;
 }

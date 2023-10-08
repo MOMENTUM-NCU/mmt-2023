@@ -17,7 +17,7 @@ export default function About() {
               Momentum is a 2-day long festival organized in the month of
               November. Momentum is the university fest where we provide the
               student community from various Universities and Colleges with
-              velocity. This year Momentum 2022, the 25th Edition is planned for
+              velocity. This year Momentum 2023, the 25th Edition is planned for
               4th-5th November.
             </p>
           </div>

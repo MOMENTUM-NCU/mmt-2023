@@ -20,11 +20,11 @@ export default function Admin({ isAdmin, eventsData }) {
         <h1 className="p-5 text-lg mx-auto text-white text-center">Events</h1>
         <div className="grid m-5 grid-cols-2 sm:grid-cols-4 gap-4">
           {eventsData.map((item) => (
-            <Link key={item.id} href={`/admin/${item.id}`}>
+            <a key={item.id} href={`/admin/${item.id}`}>
               <button className="btn btn-primary">
                 {`[${item.id}] ${item.name}`}
               </button>
-            </Link>
+            </a>
           ))}
         </div>
       </div>
