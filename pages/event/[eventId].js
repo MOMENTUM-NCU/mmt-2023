@@ -197,7 +197,14 @@ export default function EventPage({ event }) {
         <>
           <div className="flex justify-center">{view}</div>
           {isTeamEvent && (
-            <TeamName prevName={data["team_name"]} eventId={eventId} />
+            <Link
+              href={event?.teamFormLink}
+              target="_blank"
+              className="rounded-lg bg-purple-600 text-white"
+            >
+              Fill Team Details
+            </Link>
+            // <TeamName prevName={data["team_name"]} eventId={eventId} />
           )}
         </>
       );
@@ -216,9 +223,7 @@ export default function EventPage({ event }) {
   useEffect(() => {
     getComp(event.id, event.isRegOpen).then(setComp);
   }, [event.id]);
-  // const s3url = `https://momentum-poster-s3.s3.ap-south-1.amazonaws.com/poster/${event.id}.webp`;
   const bucketImageUrl = `https://momentum23-bukcet.blr1.digitaloceanspaces.com/poster/${event.id}.webp`;
-  // const s3url = `https://picsum.photos/200`;
   const onstage_link =
     "https://drive.google.com/file/d/1PrH3qPp-KKA1LFGBdbtE0reQTZa7dL-Y/view?usp=sharing";
   const offstage_link =
