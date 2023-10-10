@@ -152,7 +152,7 @@ export default function EventPage({ event }) {
       return <div className="flex justify-center">{login}</div>;
     if (response.status == 200) {
       const data = await response.json();
-
+      const isTeamEvent = event.teamSizeMin > 1;
       let view = (
         <>
           <div>
@@ -188,17 +188,22 @@ export default function EventPage({ event }) {
                 Click To Join Whatsapp group
               </div>
             </Link>
+            {isTeamEvent && (
+              <Link href={event.teamFormLink ?? ""} target="_blank">
+                <div className="rounded-lg bg-purple-500 text-white px-4 py-2 mt-2">
+                  Fill in the team details
+                </div>
+              </Link>
+              // <TeamName prevName={data["team_name"]} eventId={eventId} />
+            )}
           </div>
         </>
       );
-      const eventDetail = getEventById(eventId);
-      const isTeamEvent = eventDetail.teamSizeMin > 1;
+      // const eventDetail = await getEventById(eventId);
+
       return (
         <>
           <div className="flex justify-center">{view}</div>
-          {isTeamEvent && (
-            <TeamName prevName={data["team_name"]} eventId={eventId} />
-          )}
         </>
       );
     }
@@ -216,9 +221,7 @@ export default function EventPage({ event }) {
   useEffect(() => {
     getComp(event.id, event.isRegOpen).then(setComp);
   }, [event.id]);
-  // const s3url = `https://momentum-poster-s3.s3.ap-south-1.amazonaws.com/poster/${event.id}.webp`;
   const bucketImageUrl = `https://momentum23-bukcet.blr1.digitaloceanspaces.com/poster/${event.id}.webp`;
-  // const s3url = `https://picsum.photos/200`;
   const onstage_link =
     "https://drive.google.com/file/d/1PrH3qPp-KKA1LFGBdbtE0reQTZa7dL-Y/view?usp=sharing";
   const offstage_link =
