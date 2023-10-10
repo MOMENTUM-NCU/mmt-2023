@@ -198,7 +198,7 @@ export default function EventPage({ event }) {
           <div className="flex justify-center">{view}</div>
           {isTeamEvent && (
             <Link
-              href={event?.teamFormLink}
+              href={event.teamFormLink ?? ""}
               target="_blank"
               className="rounded-lg bg-purple-600 text-white"
             >
