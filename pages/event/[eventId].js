@@ -152,7 +152,7 @@ export default function EventPage({ event }) {
       return <div className="flex justify-center">{login}</div>;
     if (response.status == 200) {
       const data = await response.json();
-
+      const isTeamEvent = event.teamSizeMin > 1;
       let view = (
         <>
           <div>
@@ -200,7 +200,7 @@ export default function EventPage({ event }) {
         </>
       );
       // const eventDetail = await getEventById(eventId);
-      const isTeamEvent = event.teamSizeMin > 1;
+
       return (
         <>
           <div className="flex justify-center">{view}</div>
