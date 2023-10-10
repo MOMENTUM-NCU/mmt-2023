@@ -188,26 +188,22 @@ export default function EventPage({ event }) {
                 Click To Join Whatsapp group
               </div>
             </Link>
-          </div>
-        </>
-      );
-      const eventDetail = await getEventById(eventId);
-      const isTeamEvent = eventDetail.teamSizeMin > 1;
-      return (
-        <>
-          <div className="flex flex-row justify-center">
-            {view}
             {isTeamEvent && (
-              <Link
-                href={event.teamFormLink ?? ""}
-                target="_blank"
-                className="rounded-lg bg-purple-500 text-white px-4 py-2 mt-2"
-              >
-                Fill Team Details
+              <Link href={event.teamFormLink ?? ""} target="_blank">
+                <div className="rounded-lg bg-purple-500 text-white px-4 py-2 mt-2">
+                  Fill in the team details
+                </div>
               </Link>
               // <TeamName prevName={data["team_name"]} eventId={eventId} />
             )}
           </div>
+        </>
+      );
+      // const eventDetail = await getEventById(eventId);
+      const isTeamEvent = event.teamSizeMin > 1;
+      return (
+        <>
+          <div className="flex justify-center">{view}</div>
         </>
       );
     }
