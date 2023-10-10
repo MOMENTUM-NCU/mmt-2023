@@ -195,17 +195,19 @@ export default function EventPage({ event }) {
       const isTeamEvent = eventDetail.teamSizeMin > 1;
       return (
         <>
-          <div className="flex justify-center">{view}</div>
-          {isTeamEvent && (
-            <Link
-              href={event.teamFormLink ?? ""}
-              target="_blank"
-              className="rounded-lg bg-purple-600 text-white"
-            >
-              Fill Team Details
-            </Link>
-            // <TeamName prevName={data["team_name"]} eventId={eventId} />
-          )}
+          <div className="flex flex-row justify-center">
+            {view}
+            {isTeamEvent && (
+              <Link
+                href={event.teamFormLink ?? ""}
+                target="_blank"
+                className="rounded-lg bg-purple-500 text-white px-4 py-2 mt-2"
+              >
+                Fill Team Details
+              </Link>
+              // <TeamName prevName={data["team_name"]} eventId={eventId} />
+            )}
+          </div>
         </>
       );
     }

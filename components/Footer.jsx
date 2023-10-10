@@ -1,20 +1,21 @@
-import ncu_logo from "../public/t-logo-ncu.svg";
 import Image from "next/image";
 import Link from "next/link";
+import ncuImg from "../public/ncu-footer-small.jpg";
 
 export default function Footer() {
   return (
     <footer className="footer items-center p-4 bg-[#0b0d10] text-neutral-content">
       <div className="items-center grid-flow-col">
         <Image
-          src={ncu_logo}
+          src={ncuImg}
           width={36}
           height={36}
           alt={"ncu-logo"}
           style={{
             maxWidth: "100%",
-            height: "auto"
-          }} />
+            height: "auto",
+          }}
+        />
         <p>Copyright © 2023 - All right reserved</p>
       </div>
       <div className="grid-flow-col gap-4 md:place-self-center md:justify-self-end">
