@@ -191,7 +191,7 @@ export default function EventPage({ event }) {
           </div>
         </>
       );
-      const eventDetail = getEventById(eventId);
+      const eventDetail = await getEventById(eventId);
       const isTeamEvent = eventDetail.teamSizeMin > 1;
       return (
         <>
