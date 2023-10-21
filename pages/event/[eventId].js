@@ -116,7 +116,7 @@ export default function EventPage({ event }) {
         onClick={() => makePayment(eventId)}
         className="bg-green-600 hover:bg-green-800 px-4 py-2 rounded-lg text-white"
       >
-        Buy Ticket
+        Proceed for payment to Register
       </button>
     );
 
@@ -174,7 +174,7 @@ export default function EventPage({ event }) {
                 You have already Registered for this event!
               </span>
             </div>
-            <Link href={event.whatsappLink}>
+            {/* <Link href={event.whatsappLink}>
               <div className="mt-5 rounded-xl flex bg-green-500 text-white px-6 py-4 shadow-lg">
                 <svg
                   className=" fill-white mr-2"
@@ -187,7 +187,7 @@ export default function EventPage({ event }) {
                 </svg>
                 Click To Join Whatsapp group
               </div>
-            </Link>
+            </Link> */}
             {isTeamEvent && (
               <Link href={event.teamFormLink ?? ""} target="_blank">
                 <div className="rounded-lg bg-purple-500 text-white px-4 py-2 mt-2">
