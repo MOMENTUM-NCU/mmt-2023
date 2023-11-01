@@ -1,26 +1,37 @@
 const faqs = [
   {
+    ques: "How Can Students from outside NCU Join?",
+    highlight: "bg-orange-600",
+    ans: "The students must register for at least one event and carry their valid university identity proof  as an absolute requirement.",
+  },
+  {
     ques: " How do I confirm my participation in the fest?",
+
     ans: "To confirm your participation, you will receive a confirmation email.",
   },
   {
     ques: "How is Momentum being conducted this year ?",
+
     ans: "Momentum will be conducted at the NCU Campus, with a few events happening online.",
   },
   {
     ques: "Is the entry free for all? Who can attend ?",
+
     ans: "To secure your entry to Momentum, you must register for at least one event",
   },
   {
     ques: "Who can attend Momentum ?",
+
     ans: " Momentum is open to all students from any college. You can attend Momentum even if you are not part of any college fest committee. However carrying your College ID card is essential along with your event registration ticket.",
   },
   {
     ques: "Will there be food stalls in the fest ?",
+
     ans: "Yes, there will be a variety of food stalls available at the fest.",
   },
   {
     ques: " Is it possible to get a refund of the registration fee if we are unable to attend the event?",
+
     ans: "Unfortunately, the registration fee is non-refundable under any circumstances.",
   },
 ];
@@ -38,11 +49,16 @@ export default function FAQ() {
         <div className="h-full bg-black  flex-col justify-center items-center ">
           <div className="h-full w-fit  flex flex-col justify-evenly items-center mx-auto container">
             {faqs.map((faq, idx) => {
+              const hColor = () => {
+                return faq.highlight ? "" : "bg-orange-600";
+              };
               return (
                 <div
                   tabIndex={0}
                   key={idx}
-                  className="mt-2 w-full max-w-4xl collapse border-[3px] rounded-[32px] border-[#ffffff]"
+                  className={`mt-2 w-full max-w-4xl collapse border-[3px] rounded-[32px] border-[#ffffff] ${
+                    faq.highlight ?? ""
+                  }`}
                   data-aos="fade-down"
                 >
                   <div className="collapse-title text-gray-200 text-2xl font-semibold ">
