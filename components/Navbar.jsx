@@ -14,8 +14,8 @@ export default function Navbar() {
       href: "/event",
     },
     {
-      itemName: "Sponsor Us",
-      href: "https://drive.google.com/file/d/1zqFUrDrDlgDymamZlDVQm0J-6rzkiiFE/view?usp=sharing",
+      itemName: "Results",
+      href: "https://drive.google.com/file/d/1X9hnd-0YFlWrszk3kmAIPJNuIowR1k62/view?usp=sharing",
     },
     {
       itemName: "FAQs",
