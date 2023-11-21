@@ -15,7 +15,7 @@ export default function Navbar() {
     },
     {
       itemName: "Results",
-      href: "https://drive.google.com/file/d/1X9hnd-0YFlWrszk3kmAIPJNuIowR1k62/view?usp=sharing",
+      href: "https://drive.google.com/file/d/1s_SHGqqeZiTxOjrkbv2lBOQm-yBCxMEh/view?usp=sharing",
     },
     {
       itemName: "FAQs",
